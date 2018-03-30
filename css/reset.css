@@ -1,0 +1,103 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 10px;
+    background: #ffffff;
+}
+
+.weui-tab {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    background: #ffffff;
+}
+
+.weui-panel {
+    width: 100%;
+    margin-top: 0px !important;
+}
+
+.weui-tabbar__item {
+    cursor: pointer;
+}
+
+.weui-tab__panel {
+    padding-bottom: 48px !important;
+}
+
+.layout-header {
+    position: fixed;
+    top: 0px;
+    background: #1aad19;
+    width: 100%;
+    height: 48px;
+    z-index: 500;
+}
+
+.layout-body {
+    position: relative;
+    top: 48px;
+    bottom: 51px;
+    background: #ffffff;
+    height: 100%;
+}
+
+.header-title {
+    position: relative;
+    left: 34%;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    display: inline-block
+}
+
+.head-back {
+    color: #ffffff;
+    font-weight: bolder;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+.order-header-title {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.weui-navbar {
+    position: relative!important;
+}
+
+.page {
+    position: relative;
+    top: 48px;
+    height: 68%;
+    background: #ffffff;
+}
+
+.weui-navbar__item:active {
+    background-color: #ffffff!important;
+}
+
+.weui-media-box .weui-media-box:before {
+    border-top: 0px!important;
+    border-bottom: 1px solid #E5E5E5!important;
+}
+
+.navbar-active {
+    position: absolute;
+    padding: 0px 2px;
+    height: 4px;
+    width: 30px;
+    background: green;
+    display: inline-block;
+    z-index: 999;
+    top: 48px;
+    left: 40%;
+}
