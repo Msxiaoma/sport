@@ -277,7 +277,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(65)
+var listToStyles = __webpack_require__(71)
 
 /*
 type StyleObject = {
@@ -494,11 +494,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_tabbar_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_tabbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_tabbar_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_tabbar_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_tabbar_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_14b9f5ca_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_tabbar_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_14b9f5ca_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_tabbar_vue__ = __webpack_require__(55);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(59)
+  __webpack_require__(65)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -551,193 +551,31 @@ if (false) {(function () {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _tabbar = __webpack_require__(3);
+
+var _tabbar2 = _interopRequireDefault(_tabbar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-    data: function data() {
-        return {
-            soccerTime: '2018/4/16 14:00-15:00', // 从后端获取时间
-            totalMoney: '',
-            placeNum: '',
-            payForPlace: false,
-            displayMoney: false,
-            checkPlace: [],
-            places: [{
-                id: 0,
-                stat: "kexue",
-                num: "1号"
-            }, {
-                id: 1,
-                stat: "disable",
-                num: "3号"
-            }, {
-                id: 3,
-                stat: "disable",
-                num: "5号"
-            }, {
-                id: 4,
-                stat: "kexue",
-                num: "7号"
-            }, {
-                id: 0,
-                stat: "kexue",
-                num: "9号"
-            }, {
-                id: 0,
-                stat: "disable",
-                num: "11号"
-            }, {
-                id: 0,
-                stat: "kexue",
-                num: "2号"
-            }, {
-                id: 0,
-                stat: "kexue",
-                num: "4号"
-            }, {
-                id: 0,
-                stat: "kexue",
-                num: "6号"
-            }, {
-                id: 0,
-                stat: "kexue",
-                num: "8号"
-            }, {
-                id: 0,
-                stat: "kexue",
-                num: "10号"
-            }, {
-                id: 0,
-                stat: "kexue",
-                num: "12号"
-            }]
-        };
-    },
-    created: function created() {
-        console.log(window.localStorage.getItem('soccerTime'));
-        this.soccerTime = window.localStorage.getItem('soccerTime');
-    },
-    mounted: function mounted() {
-        console.log(window.localStorage.getItem('soccerTime'));
-        this.soccerTime = window.localStorage.getItem('soccerTime');
-        window.localStorage.clear();
-        console.log(this.$router);
-    },
-
-    methods: {
-        selectPlace: function selectPlace(index) {
-            this.places[index].stat = "current";
-            this.checkPlace.push(this.places[index].num);
-            this.placeNum = this.checkPlace.toString();
-            // 此时每个场地价钱是根据当前用户登录的省份进行判断
-            var money = 8 * this.checkPlace.length;
-            this.totalMoney = '¥' + money + ' ';
-            this.displayMoney = true;
-        },
-        cancleSelect: function cancleSelect(index) {
-            var placeIndex = this.checkPlace.indexOf(this.places[index].num);
-            this.checkPlace.splice(placeIndex, 1);
-            this.placeNum = this.checkPlace.toString();
-            var money = 8 * this.checkPlace.length;
-            this.totalMoney = '¥' + money + ' ';
-            this.places[index].stat = "kexue";
-        },
-        confirmPay: function confirmPay() {
-            this.payForPlace = true;
-        },
-        redirectPay: function redirectPay() {
-            this.$router.push('/pay_success');
-        },
-        back: function back() {
-            this.$router.back();
-        }
+  methods: {
+    back: function back() {
+      this.$router.back();
     }
-};
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 5 */
@@ -762,10 +600,28 @@ exports.default = {
     },
     data: function data() {
         return {
-            pictures: ["../../dist/image/home_bg1.jpg", "../../dist/image/home_bg2.jpg", "../../dist/image/home_bg3.jpg", "../../dist/image/home_bg4.jpg", "../../dist/image/home_bg5.jpg", "../../dist/image/home_bg6.jpg"]
+            pictures: [{
+                url: __webpack_require__(33)
+            }, {
+                url: __webpack_require__(34)
+            }, {
+                url: __webpack_require__(35)
+            }, {
+                url: __webpack_require__(36)
+            }, {
+                url: __webpack_require__(37)
+            }, {
+                url: __webpack_require__(38)
+            }]
         };
     }
 }; //
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1179,11 +1035,7 @@ exports.default = {
       this.$router.back();
     },
     selectPlace: function selectPlace() {
-      if (this.$route.params.stat === "0") {
-        this.$router.push("/soccer");
-      } else {
-        this.$router.push("/gymnastics");
-      }
+      this.$router.push("/soccer");
     }
   }
 };
@@ -1391,16 +1243,6 @@ exports.default = {
             }]
         };
     },
-    created: function created() {
-        console.log(window.localStorage.getItem('soccerTime'));
-        this.soccerTime = window.localStorage.getItem('soccerTime');
-    },
-    mounted: function mounted() {
-        console.log(window.localStorage.getItem('soccerTime'));
-        this.soccerTime = window.localStorage.getItem('soccerTime');
-        window.localStorage.clear();
-        console.log(this.$router);
-    },
 
     methods: {
         selectPlace: function selectPlace(index) {
@@ -1605,7 +1447,7 @@ exports.default = {
                         show: false
                     }
                 },
-                color: ['#1aad19ba'],
+                color: ['green'],
                 series: [{
                     name: 'hill',
                     type: 'pictorialBar',
@@ -1741,35 +1583,35 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(41);
+var _index = __webpack_require__(47);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(40);
+var _index3 = __webpack_require__(46);
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _index5 = __webpack_require__(42);
+var _index5 = __webpack_require__(48);
 
 var _index6 = _interopRequireDefault(_index5);
 
-var _index7 = __webpack_require__(46);
+var _index7 = __webpack_require__(52);
 
 var _index8 = _interopRequireDefault(_index7);
 
-var _index9 = __webpack_require__(44);
+var _index9 = __webpack_require__(50);
 
 var _index10 = _interopRequireDefault(_index9);
 
-var _index11 = __webpack_require__(39);
+var _index11 = __webpack_require__(45);
 
 var _index12 = _interopRequireDefault(_index11);
 
-var _pay_success = __webpack_require__(45);
+var _pay_success = __webpack_require__(51);
 
 var _pay_success2 = _interopRequireDefault(_pay_success);
 
-var _select_time = __webpack_require__(43);
+var _select_time = __webpack_require__(49);
 
 var _select_time2 = _interopRequireDefault(_select_time);
 
@@ -1800,7 +1642,7 @@ var routers = [{
   path: '/pay_success',
   component: _pay_success2.default
 }, {
-  path: '/time/:stat',
+  path: '/time',
   component: _select_time2.default
 }];
 
@@ -1821,14 +1663,14 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(37)(content, options);
+var update = __webpack_require__(43)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/_css-loader@0.28.11@css-loader/index.js!./resets.css", function() {
-			var newContent = require("!!../../../node_modules/_css-loader@0.28.11@css-loader/index.js!./resets.css");
+		module.hot.accept("!!../../node_modules/_css-loader@0.28.11@css-loader/index.js!./reset.css", function() {
+			var newContent = require("!!../../node_modules/_css-loader@0.28.11@css-loader/index.js!./reset.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -1843,7 +1685,7 @@ if(false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_bced26ea_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_app_vue__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_bced26ea_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_app_vue__ = __webpack_require__(60);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -1917,9 +1759,10 @@ Vue.filter('time', function (val) {
   return moment(val).format('YYYY-MM-DD HH:mm');
 });
 var router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes: _router2.default
 });
+
 new Vue({
   el: '#app',
   template: '<app></app>',
@@ -1931,12 +1774,12 @@ new Vue({
 
 window.apiready = function () {
   api.setStatusBarStyle({
-    color: '#26a2ff'
+    color: 'red'
   });
   api.addEventListener({
     name: 'keyback'
   }, function (ret, err) {
-    var hashs = ['#/login', '#/us', '#/order'];
+    var hashs = ['#/login', '#/home', '#/us', '#/order'];
     if (hashs.indexOf(window.location.hash) > -1) {
       api.closeWidget();
     } else {
@@ -1954,7 +1797,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, ".weui-tabbar__item{\r\n    color: #959596;\r\n}", ""]);
+exports.push([module.i, ".weui-tabbar__item {\r\n    cursor: pointer;\r\n}\r\n\r\n.container-header {\r\n    position: fixed;\r\n    top: 0px;\r\n    background: #1aad19;\r\n    width: 100%;\r\n    height: 48px;\r\n    z-index: 500;\r\n}\r\n\r\n.header-title {\r\n    position: relative;\r\n    left: 34%;\r\n    margin-top: 10px;\r\n    font-size: 18px;\r\n    color: #ffffff;\r\n    text-align: center;\r\n    display: inline-block\r\n}\r\n\r\n.head-back {\r\n    color: #ffffff;\r\n    font-weight: bolder;\r\n    line-height: 40px;\r\n    padding-left: 10px;\r\n}\r\n\r\n.order-header-title {\r\n    color: #ffffff;\r\n    font-size: 18px;\r\n    text-align: center;\r\n    padding-top: 10px;\r\n}\r\n\r\n.weui-navbar {\r\n    position: fixed!important;\r\n    top: 48px!important;\r\n}\r\n\r\n.page {\r\n    position: relative;\r\n    top: 48px;\r\n}\r\n\r\n.weui-navbar__item:active {\r\n    background-color: #ffffff!important;\r\n}\r\n\r\n.weui-media-box .weui-media-box:before{\r\n    border-top: 0px!important; \r\n    border-bottom: 1px solid #E5E5E5!important;\r\n}\r\n\r\n.navbar-active {\r\n    position: absolute;\r\n    padding: 0px 2px;\r\n    height: 4px;\r\n    width: 30px;\r\n    background: green;\r\n    display: inline-block;\r\n    z-index: 999;\r\n    top: 48px;\r\n    left: 40%;\r\n}", ""]);
 
 // exports
 
@@ -1969,7 +1812,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.soccer-body {\n    background: #f7f7f7;\n}\n.current-time-div {\n    position: relative;\n    top: 50px;\n    height: 48px;\n    width: 100%;\n    background: #ffffff;\n}\n.current-time {\n    font-size: 16px;\n    text-align: center;\n    color: #333;\n    padding-top: 12px;\n}\n.soccer-place {\n    position: relative;\n    top:20px;\n    margin: 0px auto;\n    padding: 0px 0px 0px 8px;\n}\n.soccer-place-select {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(16)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.soccer-place-disable {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(15)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.soccer-place-current {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(14)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.scoccer-place-item {\n    margin-top: 40px;\n    display: inline-block;\n    margin-left: 3px;\n    margin-right: 1px;\n    width: 54px;\n    height: 100px;\n    margin-bottom: 10px;\n}\n.scoccer-place-item p {\n    text-align: center;\n    font-size: 14px;\n    padding-top: 4px;\n    color: #333;\n}\n.place-enter {\n    margin-top: 40px;\n    height: 10px;\n    width: 74%;\n    margin-left: 16px;\n    background: #cfcfcf;\n    display: inline-block;\n}\n.place-enter-introduce {\n    position: relative;\n    width: 20%;\n    top: -26px;\n    font-size: 12px;\n    margin: 0px auto;\n}\n.icon-enter {\n    padding-right: 4px;\n    font-weight: 800;\n}\n.place-north {\n    padding-left: 16px;\n    width: 14%;\n    color: #333;\n    display: inline-block;\n}\n.placeholder {\n    width: 60%;\n    font-size: 12px;\n    margin: 0px auto;\n}\n.placeholder-select {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #ffffff;\n    display: inline-block;\n}\n.placeholder-disable {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #f55d54;\n    display: inline-block;\n}\n.placeholder-current {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #259b24;\n    display: inline-block;\n}\n.select-title {\n    display: inline-block;\n    padding-left: 6px;\n    line-height: 4px;\n    position: relative;\n    bottom: 5px;\n    color: #666;\n}\n.place-total-money {\n    height: 18%;\n    width: 100%;\n    position: absolute;\n    bottom: 0px;\n    background: #fff;\n}\n.place-total-info {\n    font-size: 14px;\n    color: #666;\n    padding: 10px;\n}\n.place-total-num {\n    font-size: 14px;\n    padding: 0px 10px;\n}\n.confirm-order {\n    width: 96%;\n    font-size: 16px;\n    margin: 8px;\n    background: #259b24;\n}\n.weui-actionsheet__title {\n    color: #333;\n    height: 38px;\n}\n.weui-font{\n    font-size:.9em;\n    color:#999999;\n}\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/soccer/src/soccer/index.vue"],"names":[],"mappings":";AAwMA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,YAAA;IACA,oBAAA;CACA;AAEA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,kBAAA;CACA;AAEA;IACA,mBAAA;IACA,SAAA;IACA,iBAAA;IACA,yBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,iBAAA;IACA,sBAAA;IACA,iBAAA;IACA,kBAAA;IACA,YAAA;IACA,cAAA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,gBAAA;IACA,iBAAA;IACA,YAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;IACA,WAAA;IACA,kBAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,mBAAA;IACA,WAAA;IACA,WAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,WAAA;IACA,YAAA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,kBAAA;IACA,iBAAA;IACA,mBAAA;IACA,YAAA;IACA,YAAA;CACA;AAEA;IACA,YAAA;IACA,YAAA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,cAAA;CACA;AAEA;IACA,gBAAA;IACA,kBAAA;CACA;AAEA;IACA,WAAA;IACA,gBAAA;IACA,YAAA;IACA,oBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,cAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab soccer-body\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"container-header\">\r\n                <i class=\"iconfont icon-jiantou-copy-copy-copy head-back\" @click=\"back()\"></i>\r\n                <p class=\"header-title\">羽毛球</p>\r\n            </div>\r\n            <div class=\"current-time-div\">\r\n                <p class=\"current-time\">2018/4/16 14:00-15:00</p>\r\n            </div>\r\n            <div class=\"soccer-place\">\r\n                <div class=\"scoccer-place-item\" v-for=\"(item,index) in places\" :key=\"item.num\" v-if=\"item.stat==='kexue'\">\r\n                    <div class=\"soccer-place-select\" @click=\"selectPlace(index)\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n                <div class=\"scoccer-place-item\" v-else-if=\"item.stat==='disable'\">\r\n                    <div class=\"soccer-place-disable\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n                <div class=\"scoccer-place-item\" v-else>\r\n                    <div class=\"soccer-place-current\" @click=\"cancleSelect(index)\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"place-enter\"></div>\r\n            <div class=\"place-north\"><i class=\"iconfont icon-daohang icon-north\"></i> 北</div>\r\n            <div class=\"place-enter-introduce\"><i class=\"iconfont icon-jiantouxiangshang icon-enter\"></i><span>入口</span></div>\r\n            <div class=\"weui-flex\">\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <div class=\"placeholder-select\"></div><span class=\"select-title\">可选</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <div class=\"placeholder-disable\"></div><span class=\"select-title\">不可选</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <div class=\"placeholder-current\"></div><span class=\"select-title\">已选</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"place-total-money\" v-show=\"displayMoney\">\r\n                <p class=\"place-total-info\">已选场地</p>\r\n                <p class=\"place-total-num\"> 羽毛球{{placeNum}}场地</p>\r\n                <div class=\"weui-btn weui-btn_primary confirm-order\" @click=\"confirmPay\">{{totalMoney}}确认预定</div>\r\n            </div>\r\n            <div v-show=\"payForPlace\">\r\n                <div class=\"weui-mask\" id=\"iosMask\" style=\"opacity: 1;\"></div>\r\n                <div class=\"weui-actionsheet weui-actionsheet_toggle\" id=\"iosActionsheet\">\r\n                    <div class=\"weui-actionsheet__title\">\r\n                        <p class=\"weui-actionsheet__title-text\">确认付款</p>\r\n                    </div>\r\n                    <div class=\"weui-form-preview\">\r\n                        <div class=\"weui-form-preview__hd\">\r\n                            <label class=\"weui-form-preview__label weui-font\">付款金额</label>\r\n                            <em class=\"weui-form-preview__value\">{{totalMoney}}</em>\r\n                        </div>\r\n                        <div class=\"weui-form-preview__bd\">\r\n                            <div class=\"weui-form-preview__item\">\r\n                                <label class=\"weui-form-preview__label\">场地信息</label>\r\n                                <span class=\"weui-form-preview__value\">羽毛球{{placeNum}}场地</span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"weui-cells\">\r\n                            <a class=\"weui-cell weui-cell_access\" href=\"javascript:;\">\r\n                                <div class=\"weui-cell__bd\">\r\n                                    <p class=\"weui-font\">付款方式</p>\r\n                                </div>\r\n                                <div class=\"weui-cell__ft \">一卡通</div>\r\n                            </a>\r\n                        </div>\r\n                        <div class=\"weui-form-preview__ft\">\r\n                             <div class=\"weui-btn weui-btn_primary confirm-order\" @click=\"redirectPay\">立即付款</div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    export default {\r\n        data() {\r\n            return {\r\n                soccerTime:'2018/4/16 14:00-15:00',  // 从后端获取时间\r\n                totalMoney: '',\r\n                placeNum: '',\r\n                payForPlace: false,\r\n                displayMoney: false,\r\n                checkPlace: [],\r\n                places: [{\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"1号\"\r\n                    },\r\n                    {\r\n                        id: 1,\r\n                        stat: \"disable\",\r\n                        num: \"3号\"\r\n                    },\r\n                    {\r\n                        id: 3,\r\n                        stat: \"disable\",\r\n                        num: \"5号\"\r\n                    },\r\n                    {\r\n                        id: 4,\r\n                        stat: \"kexue\",\r\n                        num: \"7号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"9号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"disable\",\r\n                        num: \"11号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"2号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"4号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"6号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"8号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"10号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"12号\"\r\n                    }\r\n                ]\r\n            };\r\n        },\r\n        created() {\r\n            console.log(window.localStorage.getItem('soccerTime'))\r\n            this.soccerTime = window.localStorage.getItem('soccerTime')\r\n        },\r\n        mounted() {\r\n            console.log(window.localStorage.getItem('soccerTime'))\r\n            this.soccerTime = window.localStorage.getItem('soccerTime')\r\n            window.localStorage.clear()\r\n            console.log(this.$router)\r\n        },\r\n        methods: {\r\n            selectPlace(index) {\r\n                this.places[index].stat = \"current\"\r\n                this.checkPlace.push(this.places[index].num)\r\n                this.placeNum = this.checkPlace.toString()\r\n                // 此时每个场地价钱是根据当前用户登录的省份进行判断\r\n                let money = 8 * this.checkPlace.length\r\n                this.totalMoney = '¥' + money + ' '\r\n                this.displayMoney = true\r\n            },\r\n            cancleSelect(index) {\r\n                let placeIndex = this.checkPlace.indexOf(this.places[index].num)\r\n                this.checkPlace.splice(placeIndex, 1)\r\n                this.placeNum = this.checkPlace.toString()\r\n                let money = 8 * this.checkPlace.length\r\n                this.totalMoney = '¥' + money + ' '\r\n                this.places[index].stat = \"kexue\"\r\n    \r\n            },\r\n            confirmPay() {\r\n                this.payForPlace = true\r\n            },\r\n            redirectPay(){\r\n                this.$router.push('/pay_success')\r\n            },\r\n            back() {\r\n                this.$router.back();\r\n            }\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .soccer-body {\r\n        background: #f7f7f7;\r\n    }\r\n    \r\n    .current-time-div {\r\n        position: relative;\r\n        top: 50px;\r\n        height: 48px;\r\n        width: 100%;\r\n        background: #ffffff;\r\n    }\r\n    \r\n    .current-time {\r\n        font-size: 16px;\r\n        text-align: center;\r\n        color: #333;\r\n        padding-top: 12px;\r\n    }\r\n    \r\n    .soccer-place {\r\n        position: relative;\r\n        top:20px;\r\n        margin: 0px auto;\r\n        padding: 0px 0px 0px 8px;\r\n    }\r\n    \r\n    .soccer-place-select {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/place_space.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .soccer-place-disable {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/palce_disable.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .soccer-place-current {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/current_place.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .scoccer-place-item {\r\n        margin-top: 40px;\r\n        display: inline-block;\r\n        margin-left: 3px;\r\n        margin-right: 1px;\r\n        width: 54px;\r\n        height: 100px;\r\n        margin-bottom: 10px;\r\n    }\r\n    \r\n    .scoccer-place-item p {\r\n        text-align: center;\r\n        font-size: 14px;\r\n        padding-top: 4px;\r\n        color: #333;\r\n    }\r\n    \r\n    .place-enter {\r\n        margin-top: 40px;\r\n        height: 10px;\r\n        width: 74%;\r\n        margin-left: 16px;\r\n        background: #cfcfcf;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .place-enter-introduce {\r\n        position: relative;\r\n        width: 20%;\r\n        top: -26px;\r\n        font-size: 12px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .icon-enter {\r\n        padding-right: 4px;\r\n        font-weight: 800;\r\n    }\r\n    \r\n    .place-north {\r\n        padding-left: 16px;\r\n        width: 14%;\r\n        color: #333;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder {\r\n        width: 60%;\r\n        font-size: 12px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .placeholder-select {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #ffffff;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder-disable {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #f55d54;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder-current {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #259b24;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .select-title {\r\n        display: inline-block;\r\n        padding-left: 6px;\r\n        line-height: 4px;\r\n        position: relative;\r\n        bottom: 5px;\r\n        color: #666;\r\n    }\r\n    \r\n    .place-total-money {\r\n        height: 18%;\r\n        width: 100%;\r\n        position: absolute;\r\n        bottom: 0px;\r\n        background: #fff;\r\n    }\r\n    \r\n    .place-total-info {\r\n        font-size: 14px;\r\n        color: #666;\r\n        padding: 10px;\r\n    }\r\n    \r\n    .place-total-num {\r\n        font-size: 14px;\r\n        padding: 0px 10px;\r\n    }\r\n    \r\n    .confirm-order {\r\n        width: 96%;\r\n        font-size: 16px;\r\n        margin: 8px;\r\n        background: #259b24;\r\n    }\r\n    \r\n    .weui-actionsheet__title {\r\n        color: #333;\r\n        height: 38px;\r\n    }\r\n    .weui-font{\r\n        font-size:.9em;\r\n        color:#999999;\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.soccer-body {\n    background: #f7f7f7;\n}\n.current-time-div {\n    position: relative;\n    top: 50px;\n    height: 48px;\n    width: 100%;\n    background: #ffffff;\n}\n.current-time {\n    font-size: 16px;\n    text-align: center;\n    color: #333;\n    padding-top: 12px;\n}\n.soccer-place {\n    position: relative;\n    top:20px;\n    margin: 0px auto;\n    padding: 0px 0px 0px 8px;\n}\n.soccer-place-select {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(16)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.soccer-place-disable {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(15)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.soccer-place-current {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(14)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.scoccer-place-item {\n    margin-top: 40px;\n    display: inline-block;\n    margin-left: 3px;\n    margin-right: 1px;\n    width: 54px;\n    height: 100px;\n    margin-bottom: 10px;\n}\n.scoccer-place-item p {\n    text-align: center;\n    font-size: 14px;\n    padding-top: 4px;\n    color: #333;\n}\n.place-enter {\n    margin-top: 40px;\n    height: 10px;\n    width: 74%;\n    margin-left: 16px;\n    background: #cfcfcf;\n    display: inline-block;\n}\n.place-enter-introduce {\n    position: relative;\n    width: 20%;\n    top: -26px;\n    font-size: 12px;\n    margin: 0px auto;\n}\n.icon-enter {\n    padding-right: 4px;\n    font-weight: 800;\n}\n.place-north {\n    padding-left: 16px;\n    width: 14%;\n    color: #333;\n    display: inline-block;\n}\n.soccer-placeholder{\n    width: 60%;\n    font-size: 12px;\n    margin: 0px auto;\n}\n.placeholder-select {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #ffffff;\n    display: inline-block;\n}\n.placeholder-disable {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #f55d54;\n    display: inline-block;\n}\n.placeholder-current {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #259b24;\n    display: inline-block;\n}\n.select-title {\n    display: inline-block;\n    padding-left: 6px;\n    line-height: 4px;\n    position: relative;\n    bottom: 5px;\n    color: #666;\n}\n.place-total-money {\n    height: 18%;\n    width: 100%;\n    position: absolute;\n    bottom: 0px;\n    background: #fff;\n}\n.place-total-info {\n    font-size: 14px;\n    color: #666;\n    padding: 10px;\n}\n.place-total-num {\n    font-size: 14px;\n    padding: 0px 10px;\n}\n.confirm-order {\n    width: 96%;\n    font-size: 16px;\n    margin: 8px;\n    background: #259b24;\n}\n.weui-actionsheet__title {\n    color: #333;\n    height: 38px;\n}\n.weui-font{\n    font-size:.9em;\n    color:#999999;\n}\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/soccer/src/soccer/index.vue"],"names":[],"mappings":";AA8LA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,YAAA;IACA,oBAAA;CACA;AAEA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,kBAAA;CACA;AAEA;IACA,mBAAA;IACA,SAAA;IACA,iBAAA;IACA,yBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,iBAAA;IACA,sBAAA;IACA,iBAAA;IACA,kBAAA;IACA,YAAA;IACA,cAAA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,gBAAA;IACA,iBAAA;IACA,YAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;IACA,WAAA;IACA,kBAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,mBAAA;IACA,WAAA;IACA,WAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,WAAA;IACA,YAAA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,kBAAA;IACA,iBAAA;IACA,mBAAA;IACA,YAAA;IACA,YAAA;CACA;AAEA;IACA,YAAA;IACA,YAAA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,cAAA;CACA;AAEA;IACA,gBAAA;IACA,kBAAA;CACA;AAEA;IACA,WAAA;IACA,gBAAA;IACA,YAAA;IACA,oBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,cAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab soccer-body\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"container-header\">\r\n                <i class=\"iconfont icon-jiantou-copy-copy-copy head-back\" @click=\"back()\"></i>\r\n                <p class=\"header-title\">羽毛球</p>\r\n            </div>\r\n            <div class=\"current-time-div\">\r\n                <p class=\"current-time\">2018/4/16 14:00-15:00</p>\r\n            </div>\r\n            <div class=\"soccer-place\">\r\n                <div class=\"scoccer-place-item\" v-for=\"(item,index) in places\" :key=\"item.num\" v-if=\"item.stat==='kexue'\">\r\n                    <div class=\"soccer-place-select\" @click=\"selectPlace(index)\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n                <div class=\"scoccer-place-item\" v-else-if=\"item.stat==='disable'\">\r\n                    <div class=\"soccer-place-disable\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n                <div class=\"scoccer-place-item\" v-else>\r\n                    <div class=\"soccer-place-current\" @click=\"cancleSelect(index)\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"place-enter\"></div>\r\n            <div class=\"place-north\"><i class=\"iconfont icon-daohang icon-north\"></i> 北</div>\r\n            <div class=\"place-enter-introduce\"><i class=\"iconfont icon-jiantouxiangshang icon-enter\"></i><span>入口</span></div>\r\n            <div class=\"weui-flex\">\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"soccer-placeholder\">\r\n                        <div class=\"placeholder-select\"></div><span class=\"select-title\">可选</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"soccer-placeholder\">\r\n                        <div class=\"placeholder-disable\"></div><span class=\"select-title\">不可选</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"soccer-placeholder\">\r\n                        <div class=\"placeholder-current\"></div><span class=\"select-title\">已选</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"place-total-money\" v-show=\"displayMoney\">\r\n                <p class=\"place-total-info\">已选场地</p>\r\n                <p class=\"place-total-num\"> 羽毛球{{placeNum}}场地</p>\r\n                <div class=\"weui-btn weui-btn_primary confirm-order\" @click=\"confirmPay\">{{totalMoney}}确认预定</div>\r\n            </div>\r\n            <div v-show=\"payForPlace\">\r\n                <div class=\"weui-mask\" id=\"iosMask\" style=\"opacity: 1;\"></div>\r\n                <div class=\"weui-actionsheet weui-actionsheet_toggle\" id=\"iosActionsheet\">\r\n                    <div class=\"weui-actionsheet__title\">\r\n                        <p class=\"weui-actionsheet__title-text\">确认付款</p>\r\n                    </div>\r\n                    <div class=\"weui-form-preview\">\r\n                        <div class=\"weui-form-preview__hd\">\r\n                            <label class=\"weui-form-preview__label weui-font\">付款金额</label>\r\n                            <em class=\"weui-form-preview__value\">{{totalMoney}}</em>\r\n                        </div>\r\n                        <div class=\"weui-form-preview__bd\">\r\n                            <div class=\"weui-form-preview__item\">\r\n                                <label class=\"weui-form-preview__label\">场地信息</label>\r\n                                <span class=\"weui-form-preview__value\">羽毛球{{placeNum}}场地</span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"weui-cells\">\r\n                            <a class=\"weui-cell weui-cell_access\" href=\"javascript:;\">\r\n                                <div class=\"weui-cell__bd\">\r\n                                    <p class=\"weui-font\">付款方式</p>\r\n                                </div>\r\n                                <div class=\"weui-cell__ft \">一卡通</div>\r\n                            </a>\r\n                        </div>\r\n                        <div class=\"weui-form-preview__ft\">\r\n                             <div class=\"weui-btn weui-btn_primary confirm-order\" @click=\"redirectPay\">立即付款</div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    export default {\r\n        data() {\r\n            return {\r\n                soccerTime:'2018/4/16 14:00-15:00',  // 从后端获取时间\r\n                totalMoney: '',\r\n                placeNum: '',\r\n                payForPlace: false,\r\n                displayMoney: false,\r\n                checkPlace: [],\r\n                places: [{\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"1号\"\r\n                    },\r\n                    {\r\n                        id: 1,\r\n                        stat: \"disable\",\r\n                        num: \"3号\"\r\n                    },\r\n                    {\r\n                        id: 3,\r\n                        stat: \"disable\",\r\n                        num: \"5号\"\r\n                    },\r\n                    {\r\n                        id: 4,\r\n                        stat: \"kexue\",\r\n                        num: \"7号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"9号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"disable\",\r\n                        num: \"11号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"2号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"4号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"6号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"8号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"10号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"12号\"\r\n                    }\r\n                ]\r\n            };\r\n        },\r\n        methods: {\r\n            selectPlace(index) {\r\n                this.places[index].stat = \"current\"\r\n                this.checkPlace.push(this.places[index].num)\r\n                this.placeNum = this.checkPlace.toString()\r\n                // 此时每个场地价钱是根据当前用户登录的省份进行判断\r\n                let money = 8 * this.checkPlace.length\r\n                this.totalMoney = '¥' + money + ' '\r\n                this.displayMoney = true\r\n            },\r\n            cancleSelect(index) {\r\n                let placeIndex = this.checkPlace.indexOf(this.places[index].num)\r\n                this.checkPlace.splice(placeIndex, 1)\r\n                this.placeNum = this.checkPlace.toString()\r\n                let money = 8 * this.checkPlace.length\r\n                this.totalMoney = '¥' + money + ' '\r\n                this.places[index].stat = \"kexue\"\r\n    \r\n            },\r\n            confirmPay() {\r\n                this.payForPlace = true\r\n            },\r\n            redirectPay(){\r\n                this.$router.push('/pay_success')\r\n            },\r\n            back() {\r\n                this.$router.back();\r\n            }\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .soccer-body {\r\n        background: #f7f7f7;\r\n    }\r\n    \r\n    .current-time-div {\r\n        position: relative;\r\n        top: 50px;\r\n        height: 48px;\r\n        width: 100%;\r\n        background: #ffffff;\r\n    }\r\n    \r\n    .current-time {\r\n        font-size: 16px;\r\n        text-align: center;\r\n        color: #333;\r\n        padding-top: 12px;\r\n    }\r\n    \r\n    .soccer-place {\r\n        position: relative;\r\n        top:20px;\r\n        margin: 0px auto;\r\n        padding: 0px 0px 0px 8px;\r\n    }\r\n    \r\n    .soccer-place-select {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/place_space.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .soccer-place-disable {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/palce_disable.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .soccer-place-current {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/current_place.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .scoccer-place-item {\r\n        margin-top: 40px;\r\n        display: inline-block;\r\n        margin-left: 3px;\r\n        margin-right: 1px;\r\n        width: 54px;\r\n        height: 100px;\r\n        margin-bottom: 10px;\r\n    }\r\n    \r\n    .scoccer-place-item p {\r\n        text-align: center;\r\n        font-size: 14px;\r\n        padding-top: 4px;\r\n        color: #333;\r\n    }\r\n    \r\n    .place-enter {\r\n        margin-top: 40px;\r\n        height: 10px;\r\n        width: 74%;\r\n        margin-left: 16px;\r\n        background: #cfcfcf;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .place-enter-introduce {\r\n        position: relative;\r\n        width: 20%;\r\n        top: -26px;\r\n        font-size: 12px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .icon-enter {\r\n        padding-right: 4px;\r\n        font-weight: 800;\r\n    }\r\n    \r\n    .place-north {\r\n        padding-left: 16px;\r\n        width: 14%;\r\n        color: #333;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .soccer-placeholder{\r\n        width: 60%;\r\n        font-size: 12px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .placeholder-select {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #ffffff;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder-disable {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #f55d54;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder-current {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #259b24;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .select-title {\r\n        display: inline-block;\r\n        padding-left: 6px;\r\n        line-height: 4px;\r\n        position: relative;\r\n        bottom: 5px;\r\n        color: #666;\r\n    }\r\n    \r\n    .place-total-money {\r\n        height: 18%;\r\n        width: 100%;\r\n        position: absolute;\r\n        bottom: 0px;\r\n        background: #fff;\r\n    }\r\n    \r\n    .place-total-info {\r\n        font-size: 14px;\r\n        color: #666;\r\n        padding: 10px;\r\n    }\r\n    \r\n    .place-total-num {\r\n        font-size: 14px;\r\n        padding: 0px 10px;\r\n    }\r\n    \r\n    .confirm-order {\r\n        width: 96%;\r\n        font-size: 16px;\r\n        margin: 8px;\r\n        background: #259b24;\r\n    }\r\n    \r\n    .weui-actionsheet__title {\r\n        color: #333;\r\n        height: 38px;\r\n    }\r\n    .weui-font{\r\n        font-size:.9em;\r\n        color:#999999;\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -1983,7 +1826,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.home-top-img {\n    height: 220px;\n    width: 100%;\n}\n.el-carousel__button {\n    width: 6px;\n    height: 6px;\n}\n.weui-flex {\n    padding-top: 14px;\n    margin: 0px 10px;\n}\n.weui-flex__item img {\n    margin-left: 20px;\n    width: 40px;\n}\n.weui-flex__item span {\n    text-align: center;\n    font-size: 13px;\n    color: #888;\n    display: inline-block;\n    top: -14px;\n    left: 20px;\n    position: relative;\n}\n.home-recommend {\n    padding: 20px;\n}\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/home/src/home/index.vue"],"names":[],"mappings":";AAwFA;IACA,cAAA;IACA,YAAA;CACA;AAEA;IACA,WAAA;IACA,YAAA;CACA;AAEA;IACA,kBAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;IACA,gBAAA;IACA,YAAA;IACA,sBAAA;IACA,WAAA;IACA,WAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"block\">\r\n                <el-carousel trigger=\"click\" height=\"220px\">\r\n                    <el-carousel-item v-for=\"item in pictures\" :key=\"item\">\r\n                        <img class=\"home-top-img\" :src=\"item\" />\r\n                    </el-carousel-item>\r\n                </el-carousel>\r\n            </div>\r\n            <div class=\"weui-flex\">\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <router-link to=\"/time/0\">\r\n                            <img src=\"../../dist/image/soccer.png\" /><span>羽毛球x预订</span>\r\n                        </router-link>\r\n                    </div>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <router-link to=\"/time/1\">\r\n                          <img src=\"../../dist/image/dance.png\" /><span>体操室预订</span>\r\n                        </router-link>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"weui-panel weui-panel_access\">\r\n                <div class=\"weui-panel__hd\">为您推荐</div>\r\n                <div class=\"weui-panel__bd\">\r\n                    <a href=\"javascript:void(0);\" class=\"weui-media-box weui-media-box_appmsg\">\r\n                        <div class=\"weui-media-box__hd\">\r\n                            <img class=\"weui-media-box__thumb\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==\"\r\n                                alt=\"\">\r\n                        </div>\r\n                        <div class=\"weui-media-box__bd\">\r\n                            <h4 class=\"weui-media-box__title\">标题一</h4>\r\n                            <p class=\"weui-media-box__desc\">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>\r\n                        </div>\r\n                    </a>\r\n                    <a href=\"javascript:void(0);\" class=\"weui-media-box weui-media-box_appmsg\">\r\n                        <div class=\"weui-media-box__hd\">\r\n                            <img class=\"weui-media-box__thumb\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==\"\r\n                                alt=\"\">\r\n                        </div>\r\n                        <div class=\"weui-media-box__bd\">\r\n                            <h4 class=\"weui-media-box__title\">标题二</h4>\r\n                            <p class=\"weui-media-box__desc\">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>\r\n                        </div>\r\n                    </a>\r\n                    <a href=\"javascript:void(0);\" class=\"weui-media-box weui-media-box_appmsg\">\r\n                        <div class=\"weui-media-box__hd\">\r\n                            <img class=\"weui-media-box__thumb\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==\"\r\n                                alt=\"\">\r\n                        </div>\r\n                        <div class=\"weui-media-box__bd\">\r\n                            <h4 class=\"weui-media-box__title\">标题三</h4>\r\n                            <p class=\"weui-media-box__desc\">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>\r\n                        </div>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <Tabbar value=\"home\"></Tabbar>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    import tabbar from \"../public/tabbar\";\r\n    export default {\r\n        components: {\r\n            Tabbar: tabbar\r\n        },\r\n        data() {\r\n            return {\r\n                pictures: [\r\n                    \"../../dist/image/home_bg1.jpg\",\r\n                    \"../../dist/image/home_bg2.jpg\",\r\n                    \"../../dist/image/home_bg3.jpg\",\r\n                    \"../../dist/image/home_bg4.jpg\",\r\n                    \"../../dist/image/home_bg5.jpg\",\r\n                    \"../../dist/image/home_bg6.jpg\"\r\n                ]\r\n            };\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .home-top-img {\r\n        height: 220px;\r\n        width: 100%;\r\n    }\r\n    \r\n    .el-carousel__button {\r\n        width: 6px;\r\n        height: 6px;\r\n    }\r\n    \r\n    .weui-flex {\r\n        padding-top: 14px;\r\n        margin: 0px 10px;\r\n    }\r\n    \r\n    .weui-flex__item img {\r\n        margin-left: 20px;\r\n        width: 40px;\r\n    }\r\n    \r\n    .weui-flex__item span {\r\n        text-align: center;\r\n        font-size: 13px;\r\n        color: #888;\r\n        display: inline-block;\r\n        top: -14px;\r\n        left: 20px;\r\n        position: relative;\r\n    }\r\n    \r\n    .home-recommend {\r\n        padding: 20px;\r\n    }\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.home-top-img {\n    height: 220px;\n    width: 100%;\n}\n.el-carousel__button {\n    width: 6px;\n    height: 6px;\n}\n.weui-flex {\n    padding: 14px 0px 8px 0px;\n    margin: 0px 10px;\n}\n.weui-flex__item img {\n    margin-left: 20px;\n    width: 40px;\n}\n.weui-flex__item span {\n    text-align: center;\n    font-size: 13px;\n    color: #888;\n    display: inline-block;\n    top: -14px;\n    left: 20px;\n    position: relative;\n}\n.home-recommend {\n    padding: 20px;\n}\n.weui-flex__item{\n    width: 50%\n}\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/home/src/home/index.vue"],"names":[],"mappings":";AA0GA;IACA,cAAA;IACA,YAAA;CACA;AAEA;IACA,WAAA;IACA,YAAA;CACA;AAEA;IACA,0BAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;IACA,gBAAA;IACA,YAAA;IACA,sBAAA;IACA,WAAA;IACA,WAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;CACA;AACA;IACA,UAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"block\">\r\n                <el-carousel trigger=\"click\" height=\"220px\">\r\n                    <el-carousel-item v-for=\"item in pictures\" :key=\"item\">\r\n                        <img class=\"home-top-img\" :src=\"item.url\" />\r\n                    </el-carousel-item>\r\n                </el-carousel>\r\n            </div>\r\n            <div class=\"weui-flex\">\r\n                <div class=\"weui-flex__item\">\r\n                        <router-link to=\"/time\">\r\n                            <img src=\"../../dist/image/soccer.png\" /><span>羽毛球预订</span>\r\n                        </router-link>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                        <router-link to=\"/gymnastics\">\r\n                          <img src=\"../../dist/image/dance.png\" /><span>体操室查询</span>\r\n                        </router-link>\r\n                </div>\r\n            </div>\r\n            <div class=\"weui-panel weui-panel_access\">\r\n                <div class=\"weui-panel__hd\">为您推荐</div>\r\n                <div class=\"weui-panel__bd\">\r\n                    <a href=\"javascript:void(0);\" class=\"weui-media-box weui-media-box_appmsg\">\r\n                        <div class=\"weui-media-box__hd\">\r\n                            <img class=\"weui-media-box__thumb\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==\"\r\n                                alt=\"\">\r\n                        </div>\r\n                        <div class=\"weui-media-box__bd\">\r\n                            <h4 class=\"weui-media-box__title\">标题一</h4>\r\n                            <p class=\"weui-media-box__desc\">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>\r\n                        </div>\r\n                    </a>\r\n                    <a href=\"javascript:void(0);\" class=\"weui-media-box weui-media-box_appmsg\">\r\n                        <div class=\"weui-media-box__hd\">\r\n                            <img class=\"weui-media-box__thumb\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==\"\r\n                                alt=\"\">\r\n                        </div>\r\n                        <div class=\"weui-media-box__bd\">\r\n                            <h4 class=\"weui-media-box__title\">标题二</h4>\r\n                            <p class=\"weui-media-box__desc\">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>\r\n                        </div>\r\n                    </a>\r\n                    <a href=\"javascript:void(0);\" class=\"weui-media-box weui-media-box_appmsg\">\r\n                        <div class=\"weui-media-box__hd\">\r\n                            <img class=\"weui-media-box__thumb\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==\"\r\n                                alt=\"\">\r\n                        </div>\r\n                        <div class=\"weui-media-box__bd\">\r\n                            <h4 class=\"weui-media-box__title\">标题三</h4>\r\n                            <p class=\"weui-media-box__desc\">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>\r\n                        </div>\r\n                    </a>\r\n                     <a href=\"javascript:void(0);\" class=\"weui-media-box weui-media-box_appmsg\">\r\n                        <div class=\"weui-media-box__hd\">\r\n                            <img class=\"weui-media-box__thumb\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==\"\r\n                                alt=\"\">\r\n                        </div>\r\n                        <div class=\"weui-media-box__bd\">\r\n                            <h4 class=\"weui-media-box__title\">标题四</h4>\r\n                            <p class=\"weui-media-box__desc\">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>\r\n                        </div>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <Tabbar value=\"home\"></Tabbar>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    import tabbar from \"../public/tabbar\";\r\n    export default {\r\n        components: {\r\n            Tabbar: tabbar\r\n        },\r\n        data() {\r\n            return {\r\n                pictures: [\r\n                    {\r\n                        url:require(\"../../dist/image/home_bg1.jpg\")\r\n                    },\r\n                    {\r\n                        url:require(\"../../dist/image/home_bg2.jpg\")\r\n                    },\r\n                    {\r\n                        url:require(\"../../dist/image/home_bg3.jpg\")\r\n                    },\r\n                    {\r\n                        url:require(\"../../dist/image/home_bg4.jpg\")\r\n                    },\r\n                    {\r\n                        url:require(\"../../dist/image/home_bg5.jpg\")\r\n                    },\r\n                    {\r\n                        url:require(\"../../dist/image/home_bg6.jpg\")\r\n                    }\r\n                ]\r\n            };\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .home-top-img {\r\n        height: 220px;\r\n        width: 100%;\r\n    }\r\n    \r\n    .el-carousel__button {\r\n        width: 6px;\r\n        height: 6px;\r\n    }\r\n    \r\n    .weui-flex {\r\n        padding: 14px 0px 8px 0px;\r\n        margin: 0px 10px;\r\n    }\r\n    \r\n    .weui-flex__item img {\r\n        margin-left: 20px;\r\n        width: 40px;\r\n    }\r\n    \r\n    .weui-flex__item span {\r\n        text-align: center;\r\n        font-size: 13px;\r\n        color: #888;\r\n        display: inline-block;\r\n        top: -14px;\r\n        left: 20px;\r\n        position: relative;\r\n    }\r\n    \r\n    .home-recommend {\r\n        padding: 20px;\r\n    }\r\n    .weui-flex__item{\r\n        width: 50%\r\n    }\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -2003,21 +1846,7 @@ exports.push([module.i, "\n.item-active {\r\n  color: #1aad19;\n}\r\n", "", {"ve
 
 
 /***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var escape = __webpack_require__(13);
-exports = module.exports = __webpack_require__(1)(true);
-// imports
-
-
-// module
-exports.push([module.i, "\n.soccer-body {\n    background: #f7f7f7;\n}\n.current-time-div {\n    position: relative;\n    top: 50px;\n    height: 48px;\n    width: 100%;\n    background: #ffffff;\n}\n.current-time {\n    font-size: 16px;\n    text-align: center;\n    color: #333;\n    padding-top: 12px;\n}\n.soccer-place {\n    position: relative;\n    top:20px;\n    margin: 0px auto;\n    padding: 0px 0px 0px 8px;\n}\n.soccer-place-select {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(16)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.soccer-place-disable {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(15)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.soccer-place-current {\n    width: 100%;\n    height: 100%;\n    background: url(" + escape(__webpack_require__(14)) + ");\n    background-size: 100% 100%;\n    display: inline-block;\n}\n.scoccer-place-item {\n    margin-top: 40px;\n    display: inline-block;\n    margin-left: 3px;\n    margin-right: 1px;\n    width: 54px;\n    height: 100px;\n    margin-bottom: 10px;\n}\n.scoccer-place-item p {\n    text-align: center;\n    font-size: 14px;\n    padding-top: 4px;\n    color: #333;\n}\n.place-enter {\n    margin-top: 40px;\n    height: 10px;\n    width: 74%;\n    margin-left: 16px;\n    background: #cfcfcf;\n    display: inline-block;\n}\n.place-enter-introduce {\n    position: relative;\n    width: 20%;\n    top: -26px;\n    font-size: 12px;\n    margin: 0px auto;\n}\n.icon-enter {\n    padding-right: 4px;\n    font-weight: 800;\n}\n.place-north {\n    padding-left: 16px;\n    width: 14%;\n    color: #333;\n    display: inline-block;\n}\n.placeholder {\n    width: 60%;\n    font-size: 12px;\n    margin: 0px auto;\n}\n.placeholder-select {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #ffffff;\n    display: inline-block;\n}\n.placeholder-disable {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #f55d54;\n    display: inline-block;\n}\n.placeholder-current {\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    border: 1px solid #dddddd;\n    background: #259b24;\n    display: inline-block;\n}\n.select-title {\n    display: inline-block;\n    padding-left: 6px;\n    line-height: 4px;\n    position: relative;\n    bottom: 5px;\n    color: #666;\n}\n.place-total-money {\n    height: 18%;\n    width: 100%;\n    position: absolute;\n    bottom: 0px;\n    background: #fff;\n}\n.place-total-info {\n    font-size: 14px;\n    color: #666;\n    padding: 10px;\n}\n.place-total-num {\n    font-size: 14px;\n    padding: 0px 10px;\n}\n.confirm-order {\n    width: 96%;\n    font-size: 16px;\n    margin: 8px;\n    background: #259b24;\n}\n.weui-actionsheet__title {\n    color: #333;\n    height: 38px;\n}\n.weui-font{\n    font-size:.9em;\n    color:#999999;\n}\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/gymnastics/src/gymnastics/index.vue"],"names":[],"mappings":";AAwMA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,YAAA;IACA,oBAAA;CACA;AAEA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,kBAAA;CACA;AAEA;IACA,mBAAA;IACA,SAAA;IACA,iBAAA;IACA,yBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,0CAAA;IACA,2BAAA;IACA,sBAAA;CACA;AAEA;IACA,iBAAA;IACA,sBAAA;IACA,iBAAA;IACA,kBAAA;IACA,YAAA;IACA,cAAA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,gBAAA;IACA,iBAAA;IACA,YAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;IACA,WAAA;IACA,kBAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,mBAAA;IACA,WAAA;IACA,WAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,WAAA;IACA,YAAA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,0BAAA;IACA,oBAAA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,kBAAA;IACA,iBAAA;IACA,mBAAA;IACA,YAAA;IACA,YAAA;CACA;AAEA;IACA,YAAA;IACA,YAAA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,cAAA;CACA;AAEA;IACA,gBAAA;IACA,kBAAA;CACA;AAEA;IACA,WAAA;IACA,gBAAA;IACA,YAAA;IACA,oBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,cAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab soccer-body\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"container-header\">\r\n                <i class=\"iconfont icon-jiantou-copy-copy-copy head-back\" @click=\"back()\"></i>\r\n                <p class=\"header-title\">体操室</p>\r\n            </div>\r\n            <div class=\"current-time-div\">\r\n                <p class=\"current-time\">2018/4/16 14:00-15:00</p>\r\n            </div>\r\n            <div class=\"soccer-place\">\r\n                <div class=\"scoccer-place-item\" v-for=\"(item,index) in places\" :key=\"item.num\" v-if=\"item.stat==='kexue'\">\r\n                    <div class=\"soccer-place-select\" @click=\"selectPlace(index)\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n                <div class=\"scoccer-place-item\" v-else-if=\"item.stat==='disable'\">\r\n                    <div class=\"soccer-place-disable\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n                <div class=\"scoccer-place-item\" v-else>\r\n                    <div class=\"soccer-place-current\" @click=\"cancleSelect(index)\"></div>\r\n                    <p>{{item.num}}</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"place-enter\"></div>\r\n            <div class=\"place-north\"><i class=\"iconfont icon-daohang icon-north\"></i> 北</div>\r\n            <div class=\"place-enter-introduce\"><i class=\"iconfont icon-jiantouxiangshang icon-enter\"></i><span>入口</span></div>\r\n            <div class=\"weui-flex\">\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <div class=\"placeholder-select\"></div><span class=\"select-title\">可选</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <div class=\"placeholder-disable\"></div><span class=\"select-title\">不可选</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"weui-flex__item\">\r\n                    <div class=\"placeholder\">\r\n                        <div class=\"placeholder-current\"></div><span class=\"select-title\">已选</span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"place-total-money\" v-show=\"displayMoney\">\r\n                <p class=\"place-total-info\">已选场地</p>\r\n                <p class=\"place-total-num\"> 羽毛球{{placeNum}}场地</p>\r\n                <div class=\"weui-btn weui-btn_primary confirm-order\" @click=\"confirmPay\">{{totalMoney}}确认预定</div>\r\n            </div>\r\n            <div v-show=\"payForPlace\">\r\n                <div class=\"weui-mask\" id=\"iosMask\" style=\"opacity: 1;\"></div>\r\n                <div class=\"weui-actionsheet weui-actionsheet_toggle\" id=\"iosActionsheet\">\r\n                    <div class=\"weui-actionsheet__title\">\r\n                        <p class=\"weui-actionsheet__title-text\">确认付款</p>\r\n                    </div>\r\n                    <div class=\"weui-form-preview\">\r\n                        <div class=\"weui-form-preview__hd\">\r\n                            <label class=\"weui-form-preview__label weui-font\">付款金额</label>\r\n                            <em class=\"weui-form-preview__value\">{{totalMoney}}</em>\r\n                        </div>\r\n                        <div class=\"weui-form-preview__bd\">\r\n                            <div class=\"weui-form-preview__item\">\r\n                                <label class=\"weui-form-preview__label\">场地信息</label>\r\n                                <span class=\"weui-form-preview__value\">羽毛球{{placeNum}}场地</span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"weui-cells\">\r\n                            <a class=\"weui-cell weui-cell_access\" href=\"javascript:;\">\r\n                                <div class=\"weui-cell__bd\">\r\n                                    <p class=\"weui-font\">付款方式</p>\r\n                                </div>\r\n                                <div class=\"weui-cell__ft \">一卡通</div>\r\n                            </a>\r\n                        </div>\r\n                        <div class=\"weui-form-preview__ft\">\r\n                             <div class=\"weui-btn weui-btn_primary confirm-order\" @click=\"redirectPay\">立即付款</div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    export default {\r\n        data() {\r\n            return {\r\n                soccerTime:'2018/4/16 14:00-15:00',  // 从后端获取时间\r\n                totalMoney: '',\r\n                placeNum: '',\r\n                payForPlace: false,\r\n                displayMoney: false,\r\n                checkPlace: [],\r\n                places: [{\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"1号\"\r\n                    },\r\n                    {\r\n                        id: 1,\r\n                        stat: \"disable\",\r\n                        num: \"3号\"\r\n                    },\r\n                    {\r\n                        id: 3,\r\n                        stat: \"disable\",\r\n                        num: \"5号\"\r\n                    },\r\n                    {\r\n                        id: 4,\r\n                        stat: \"kexue\",\r\n                        num: \"7号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"9号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"disable\",\r\n                        num: \"11号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"2号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"4号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"6号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"8号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"10号\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        stat: \"kexue\",\r\n                        num: \"12号\"\r\n                    }\r\n                ]\r\n            };\r\n        },\r\n        created() {\r\n            console.log(window.localStorage.getItem('soccerTime'))\r\n            this.soccerTime = window.localStorage.getItem('soccerTime')\r\n        },\r\n        mounted() {\r\n            console.log(window.localStorage.getItem('soccerTime'))\r\n            this.soccerTime = window.localStorage.getItem('soccerTime')\r\n            window.localStorage.clear()\r\n            console.log(this.$router)\r\n        },\r\n        methods: {\r\n            selectPlace(index) {\r\n                this.places[index].stat = \"current\"\r\n                this.checkPlace.push(this.places[index].num)\r\n                this.placeNum = this.checkPlace.toString()\r\n                // 此时每个场地价钱是根据当前用户登录的省份进行判断\r\n                let money = 8 * this.checkPlace.length\r\n                this.totalMoney = '¥' + money + ' '\r\n                this.displayMoney = true\r\n            },\r\n            cancleSelect(index) {\r\n                let placeIndex = this.checkPlace.indexOf(this.places[index].num)\r\n                this.checkPlace.splice(placeIndex, 1)\r\n                this.placeNum = this.checkPlace.toString()\r\n                let money = 8 * this.checkPlace.length\r\n                this.totalMoney = '¥' + money + ' '\r\n                this.places[index].stat = \"kexue\"\r\n    \r\n            },\r\n            confirmPay() {\r\n                this.payForPlace = true\r\n            },\r\n            redirectPay(){\r\n                this.$router.push('/pay_success')\r\n            },\r\n            back() {\r\n                this.$router.back();\r\n            }\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .soccer-body {\r\n        background: #f7f7f7;\r\n    }\r\n    \r\n    .current-time-div {\r\n        position: relative;\r\n        top: 50px;\r\n        height: 48px;\r\n        width: 100%;\r\n        background: #ffffff;\r\n    }\r\n    \r\n    .current-time {\r\n        font-size: 16px;\r\n        text-align: center;\r\n        color: #333;\r\n        padding-top: 12px;\r\n    }\r\n    \r\n    .soccer-place {\r\n        position: relative;\r\n        top:20px;\r\n        margin: 0px auto;\r\n        padding: 0px 0px 0px 8px;\r\n    }\r\n    \r\n    .soccer-place-select {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/place_space.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .soccer-place-disable {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/palce_disable.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .soccer-place-current {\r\n        width: 100%;\r\n        height: 100%;\r\n        background: url(\"../assets/img/current_place.jpeg\");\r\n        background-size: 100% 100%;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .scoccer-place-item {\r\n        margin-top: 40px;\r\n        display: inline-block;\r\n        margin-left: 3px;\r\n        margin-right: 1px;\r\n        width: 54px;\r\n        height: 100px;\r\n        margin-bottom: 10px;\r\n    }\r\n    \r\n    .scoccer-place-item p {\r\n        text-align: center;\r\n        font-size: 14px;\r\n        padding-top: 4px;\r\n        color: #333;\r\n    }\r\n    \r\n    .place-enter {\r\n        margin-top: 40px;\r\n        height: 10px;\r\n        width: 74%;\r\n        margin-left: 16px;\r\n        background: #cfcfcf;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .place-enter-introduce {\r\n        position: relative;\r\n        width: 20%;\r\n        top: -26px;\r\n        font-size: 12px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .icon-enter {\r\n        padding-right: 4px;\r\n        font-weight: 800;\r\n    }\r\n    \r\n    .place-north {\r\n        padding-left: 16px;\r\n        width: 14%;\r\n        color: #333;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder {\r\n        width: 60%;\r\n        font-size: 12px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .placeholder-select {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #ffffff;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder-disable {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #f55d54;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .placeholder-current {\r\n        width: 20px;\r\n        height: 20px;\r\n        border-radius: 50%;\r\n        border: 1px solid #dddddd;\r\n        background: #259b24;\r\n        display: inline-block;\r\n    }\r\n    \r\n    .select-title {\r\n        display: inline-block;\r\n        padding-left: 6px;\r\n        line-height: 4px;\r\n        position: relative;\r\n        bottom: 5px;\r\n        color: #666;\r\n    }\r\n    \r\n    .place-total-money {\r\n        height: 18%;\r\n        width: 100%;\r\n        position: absolute;\r\n        bottom: 0px;\r\n        background: #fff;\r\n    }\r\n    \r\n    .place-total-info {\r\n        font-size: 14px;\r\n        color: #666;\r\n        padding: 10px;\r\n    }\r\n    \r\n    .place-total-num {\r\n        font-size: 14px;\r\n        padding: 0px 10px;\r\n    }\r\n    \r\n    .confirm-order {\r\n        width: 96%;\r\n        font-size: 16px;\r\n        margin: 8px;\r\n        background: #259b24;\r\n    }\r\n    \r\n    .weui-actionsheet__title {\r\n        color: #333;\r\n        height: 38px;\r\n    }\r\n    .weui-font{\r\n        font-size:.9em;\r\n        color:#999999;\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
-
-// exports
-
-
-/***/ }),
+/* 25 */,
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2026,7 +1855,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.el-tabs--border-card>.el-tabs__content {\n    width: 100%;\n    height: 100%;\n    display: block !important;\n}\n.us-wrap {\n    height: 160px;\n    background: #fbfbfb;\n    width: 100%;\n    border-bottom: 1px solid #ccc;\n    position: relative;\n    top: 48px;\n}\n.myself-info {\n    position: relative;\n    top: 18%;\n    width: 80px;\n    height: 120px;\n    margin: 0px auto;\n}\n.myself-img {\n    width: 80px;\n    height: 80px;\n    border-radius: 50%;\n}\n.myself-name {\n    padding-top: 10px;\n    text-align: center;\n}\n.weui-navbar-my {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    position: relative;\n    z-index: 500;\n    top: 0;\n    width: 100%;\n    background-color: #fbfbfb;\n}\n#week-consume {\n    margin-top: 10%;\n    /* width: 94%;\n    height: 40%; */\n     width: 350px;\n    height: 300px;\n    padding: 0px 10px;\n}\n\n\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/us/src/us/index.vue"],"names":[],"mappings":";AA0NA;IACA,YAAA;IACA,aAAA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,8BAAA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,mBAAA;IACA,SAAA;IACA,YAAA;IACA,cAAA;IACA,iBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;CACA;AAEA;IACA,kBAAA;IACA,mBAAA;CACA;AAEA;IACA,qBAAA;IACA,sBAAA;IACA,cAAA;IACA,mBAAA;IACA,aAAA;IACA,OAAA;IACA,YAAA;IACA,0BAAA;CACA;AAEA;IACA,gBAAA;IACA;mBACA;KACA,aAAA;IACA,cAAA;IACA,kBAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"container-header\">\r\n                <p class=\"order-header-title\">我的</p>\r\n            </div>\r\n            <div class=\"us-wrap\">\r\n                <div class=\"myself-info\">\r\n                    <img src=\"../assets/img/about.png\" class=\"myself-img\" />\r\n                    <p class=\"myself-name\">马嫒</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"page navbar js_show\">\r\n                <div class=\"page__bd\">\r\n                    <div class=\"weui-tab\">\r\n                        <div class=\"weui-navbar-my\">\r\n                            <div class=\"weui-navbar__item\" @click=\"weekExercise()\">\r\n                                周运动\r\n                                <span class=\"navbar-active\" v-show=\"dispalyExercise\"></span>\r\n                            </div>\r\n                            <div class=\"weui-navbar__item\" @click=\"weekConsume()\">\r\n                                周消费\r\n                                <span class=\"navbar-active\" v-show=\"dispalyConsume\"></span>\r\n                            </div>\r\n                        </div>\r\n                        <div id=\"week-consume\"></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <Tabbar value=\"us\"></Tabbar>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    import tabbar from \"../public/tabbar\";\r\n   \r\n    export default {\r\n        \r\n        data() {\r\n            return {\r\n                dispalyExercise: true,\r\n                dispalyConsume: false\r\n            };\r\n        },\r\n        components: {\r\n            Tabbar: tabbar\r\n        },\r\n        mounted() {\r\n            this.drawExercise();\r\n        },\r\n        methods: {\r\n            weekExercise() {\r\n                this.dispalyExercise = true;\r\n                this.dispalyConsume = false;\r\n                this.drawExercise();\r\n            },\r\n            weekConsume() {\r\n                this.dispalyExercise = false;\r\n                this.dispalyConsume = true;\r\n                this.drawConsume();\r\n            },\r\n            drawConsume() {\r\n                // 基于准备好的dom，初始化echarts实例\r\n                let myChart = echarts.init(document.getElementById(\"week-consume\"));\r\n                // 绘制图表\r\n                myChart.clear();\r\n                myChart.setOption({\r\n                    title: {\r\n                        text: \"本周消费\",\r\n                        //   subtext: \"纯属虚构\",\r\n                        x: \"center\"\r\n                    },\r\n                    tooltip: {\r\n                        trigger: \"item\",\r\n                        formatter: \"{a} <br/>{b} : {c} ({d}%)\"\r\n                    },\r\n                    legend: {\r\n                        orient: \"vertical\",\r\n                        left: \"left\",\r\n                        data: [\"乒乓球\", \"健身房\", \"体操室\", \"其他\", \"羽毛球\"]\r\n                    },\r\n                    series: [{\r\n                        name: \"访问来源\",\r\n                        type: \"pie\",\r\n                        radius: \"55%\",\r\n                        center: [\"50%\", \"60%\"],\r\n                        data: [{\r\n                                value: 335,\r\n                                name: \"乒乓球\"\r\n                            },\r\n                            {\r\n                                value: 310,\r\n                                name: \"健身房\"\r\n                            },\r\n                            {\r\n                                value: 234,\r\n                                name: \"体操室\"\r\n                            },\r\n                            {\r\n                                value: 135,\r\n                                name: \"其他\"\r\n                            },\r\n                            {\r\n                                value: 1548,\r\n                                name: \"羽毛球\"\r\n                            }\r\n                        ],\r\n                        itemStyle: {\r\n                            emphasis: {\r\n                                shadowBlur: 10,\r\n                                shadowOffsetX: 0,\r\n                                shadowColor: \"rgba(0, 0, 0, 0.5)\"\r\n                            }\r\n                        }\r\n                    }]\r\n                });\r\n            },\r\n            drawExercise() {\r\n                // 绘制图表\r\n                let myChart = echarts.init(document.getElementById(\"week-consume\"));\r\n                myChart.setOption({\r\n                    title: {\r\n                        text: \"本周运动\",\r\n                        //   subtext: \"纯属虚构\",\r\n                        x: \"center\"\r\n                    },\r\n                    tooltip: {\r\n                        trigger: 'axis',\r\n                        axisPointer: {\r\n                            type: 'none'\r\n                        },\r\n                        formatter: function(params) {\r\n                            return params[0].name + ': ' + params[0].value;\r\n                        }\r\n                    },\r\n                    xAxis: {\r\n                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],\r\n                        axisTick: {\r\n                            show: false\r\n                        },\r\n                        axisLine: {\r\n                            show: false\r\n                        },\r\n                        axisLabel: {\r\n                            textStyle: {\r\n                                color: '#1aad19'\r\n                            }\r\n                        }\r\n                    },\r\n                    yAxis: {\r\n                        splitLine: {\r\n                            show: false\r\n                        },\r\n                        axisTick: {\r\n                            show: false\r\n                        },\r\n                        axisLine: {\r\n                            show: false\r\n                        },\r\n                        axisLabel: {\r\n                            show: false\r\n                        }\r\n                    },\r\n                    color: ['#1aad19ba'],\r\n                    series: [{\r\n                        name: 'hill',\r\n                        type: 'pictorialBar',\r\n                        barCategoryGap: '-130%',\r\n                        // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',\r\n                        symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',\r\n                        itemStyle: {\r\n                            normal: {\r\n                                opacity: 0.5\r\n                            },\r\n                            emphasis: {\r\n                                opacity: 1\r\n                            }\r\n                        },\r\n                        data: [123, 60, 25, 18, 12, 2, 30],\r\n                        z: 10\r\n                    }, {\r\n                        name: 'glyph',\r\n                        type: 'pictorialBar',\r\n                        barGap: '-100%',\r\n                        // symbolPosition: 'end',\r\n                        // symbolSize: 50,\r\n                        // symbolOffset: [0, '-120%'],\r\n                        data: [{\r\n                            value: 123,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 60,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 25,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 18,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 12,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 2,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 30,\r\n                            symbolSize: [0, 0]\r\n                        }]\r\n                    }]\r\n                });\r\n            }\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .el-tabs--border-card>.el-tabs__content {\r\n        width: 100%;\r\n        height: 100%;\r\n        display: block !important;\r\n    }\r\n    \r\n    .us-wrap {\r\n        height: 160px;\r\n        background: #fbfbfb;\r\n        width: 100%;\r\n        border-bottom: 1px solid #ccc;\r\n        position: relative;\r\n        top: 48px;\r\n    }\r\n    \r\n    .myself-info {\r\n        position: relative;\r\n        top: 18%;\r\n        width: 80px;\r\n        height: 120px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .myself-img {\r\n        width: 80px;\r\n        height: 80px;\r\n        border-radius: 50%;\r\n    }\r\n    \r\n    .myself-name {\r\n        padding-top: 10px;\r\n        text-align: center;\r\n    }\r\n    \r\n    .weui-navbar-my {\r\n        display: -webkit-box;\r\n        display: -webkit-flex;\r\n        display: flex;\r\n        position: relative;\r\n        z-index: 500;\r\n        top: 0;\r\n        width: 100%;\r\n        background-color: #fbfbfb;\r\n    }\r\n    \r\n    #week-consume {\r\n        margin-top: 10%;\r\n        /* width: 94%;\r\n        height: 40%; */\r\n         width: 350px;\r\n        height: 300px;\r\n        padding: 0px 10px;\r\n    }\r\n    \r\n  \r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.el-tabs--border-card>.el-tabs__content {\n    width: 100%;\n    height: 100%;\n    display: block !important;\n}\n.us-wrap {\n    height: 160px;\n    background: #fbfbfb;\n    width: 100%;\n    border-bottom: 1px solid #ccc;\n    position: relative;\n    top: 48px;\n}\n.myself-info {\n    position: relative;\n    top: 18%;\n    width: 80px;\n    height: 120px;\n    margin: 0px auto;\n}\n.myself-img {\n    width: 80px;\n    height: 80px;\n    border-radius: 50%;\n}\n.myself-name {\n    padding-top: 10px;\n    text-align: center;\n}\n.weui-navbar-my {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    position: relative;\n    z-index: 500;\n    top: 0;\n    width: 100%;\n    background-color: #fbfbfb;\n}\n#week-consume {\n    margin-top: 10%;\n    /* width: 94%;\n    height: 40%; */\n     width: 350px;\n    height: 300px;\n    padding: 0px 10px;\n}\n\n\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/us/src/us/index.vue"],"names":[],"mappings":";AA0NA;IACA,YAAA;IACA,aAAA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,8BAAA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,mBAAA;IACA,SAAA;IACA,YAAA;IACA,cAAA;IACA,iBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;CACA;AAEA;IACA,kBAAA;IACA,mBAAA;CACA;AAEA;IACA,qBAAA;IACA,sBAAA;IACA,cAAA;IACA,mBAAA;IACA,aAAA;IACA,OAAA;IACA,YAAA;IACA,0BAAA;CACA;AAEA;IACA,gBAAA;IACA;mBACA;KACA,aAAA;IACA,cAAA;IACA,kBAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"container-header\">\r\n                <p class=\"order-header-title\">我的</p>\r\n            </div>\r\n            <div class=\"us-wrap\">\r\n                <div class=\"myself-info\">\r\n                    <img src=\"../assets/img/about.png\" class=\"myself-img\" />\r\n                    <p class=\"myself-name\">马嫒</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"page navbar js_show\">\r\n                <div class=\"page__bd\">\r\n                    <div class=\"weui-tab\">\r\n                        <div class=\"weui-navbar-my\">\r\n                            <div class=\"weui-navbar__item\" @click=\"weekExercise()\">\r\n                                周运动\r\n                                <span class=\"navbar-active\" v-show=\"dispalyExercise\"></span>\r\n                            </div>\r\n                            <div class=\"weui-navbar__item\" @click=\"weekConsume()\">\r\n                                周消费\r\n                                <span class=\"navbar-active\" v-show=\"dispalyConsume\"></span>\r\n                            </div>\r\n                        </div>\r\n                        <div id=\"week-consume\"></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <Tabbar value=\"us\"></Tabbar>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    import tabbar from \"../public/tabbar\";\r\n   \r\n    export default {\r\n        \r\n        data() {\r\n            return {\r\n                dispalyExercise: true,\r\n                dispalyConsume: false\r\n            };\r\n        },\r\n        components: {\r\n            Tabbar: tabbar\r\n        },\r\n        mounted() {\r\n            this.drawExercise();\r\n        },\r\n        methods: {\r\n            weekExercise() {\r\n                this.dispalyExercise = true;\r\n                this.dispalyConsume = false;\r\n                this.drawExercise();\r\n            },\r\n            weekConsume() {\r\n                this.dispalyExercise = false;\r\n                this.dispalyConsume = true;\r\n                this.drawConsume();\r\n            },\r\n            drawConsume() {\r\n                // 基于准备好的dom，初始化echarts实例\r\n                let myChart = echarts.init(document.getElementById(\"week-consume\"));\r\n                // 绘制图表\r\n                myChart.clear();\r\n                myChart.setOption({\r\n                    title: {\r\n                        text: \"本周消费\",\r\n                        //   subtext: \"纯属虚构\",\r\n                        x: \"center\"\r\n                    },\r\n                    tooltip: {\r\n                        trigger: \"item\",\r\n                        formatter: \"{a} <br/>{b} : {c} ({d}%)\"\r\n                    },\r\n                    legend: {\r\n                        orient: \"vertical\",\r\n                        left: \"left\",\r\n                        data: [\"乒乓球\", \"健身房\", \"体操室\", \"其他\", \"羽毛球\"]\r\n                    },\r\n                    series: [{\r\n                        name: \"访问来源\",\r\n                        type: \"pie\",\r\n                        radius: \"55%\",\r\n                        center: [\"50%\", \"60%\"],\r\n                        data: [{\r\n                                value: 335,\r\n                                name: \"乒乓球\"\r\n                            },\r\n                            {\r\n                                value: 310,\r\n                                name: \"健身房\"\r\n                            },\r\n                            {\r\n                                value: 234,\r\n                                name: \"体操室\"\r\n                            },\r\n                            {\r\n                                value: 135,\r\n                                name: \"其他\"\r\n                            },\r\n                            {\r\n                                value: 1548,\r\n                                name: \"羽毛球\"\r\n                            }\r\n                        ],\r\n                        itemStyle: {\r\n                            emphasis: {\r\n                                shadowBlur: 10,\r\n                                shadowOffsetX: 0,\r\n                                shadowColor: \"rgba(0, 0, 0, 0.5)\"\r\n                            }\r\n                        }\r\n                    }]\r\n                });\r\n            },\r\n            drawExercise() {\r\n                // 绘制图表\r\n                let myChart = echarts.init(document.getElementById(\"week-consume\"));\r\n                myChart.setOption({\r\n                    title: {\r\n                        text: \"本周运动\",\r\n                        //   subtext: \"纯属虚构\",\r\n                        x: \"center\"\r\n                    },\r\n                    tooltip: {\r\n                        trigger: 'axis',\r\n                        axisPointer: {\r\n                            type: 'none'\r\n                        },\r\n                        formatter: function(params) {\r\n                            return params[0].name + ': ' + params[0].value;\r\n                        }\r\n                    },\r\n                    xAxis: {\r\n                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],\r\n                        axisTick: {\r\n                            show: false\r\n                        },\r\n                        axisLine: {\r\n                            show: false\r\n                        },\r\n                        axisLabel: {\r\n                            textStyle: {\r\n                                color: '#1aad19'\r\n                            }\r\n                        }\r\n                    },\r\n                    yAxis: {\r\n                        splitLine: {\r\n                            show: false\r\n                        },\r\n                        axisTick: {\r\n                            show: false\r\n                        },\r\n                        axisLine: {\r\n                            show: false\r\n                        },\r\n                        axisLabel: {\r\n                            show: false\r\n                        }\r\n                    },\r\n                    color: ['green'],\r\n                    series: [{\r\n                        name: 'hill',\r\n                        type: 'pictorialBar',\r\n                        barCategoryGap: '-130%',\r\n                        // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',\r\n                        symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',\r\n                        itemStyle: {\r\n                            normal: {\r\n                                opacity: 0.5\r\n                            },\r\n                            emphasis: {\r\n                                opacity: 1\r\n                            }\r\n                        },\r\n                        data: [123, 60, 25, 18, 12, 2, 30],\r\n                        z: 10\r\n                    }, {\r\n                        name: 'glyph',\r\n                        type: 'pictorialBar',\r\n                        barGap: '-100%',\r\n                        // symbolPosition: 'end',\r\n                        // symbolSize: 50,\r\n                        // symbolOffset: [0, '-120%'],\r\n                        data: [{\r\n                            value: 123,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 60,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 25,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 18,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 12,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 2,\r\n                            symbolSize: [0, 0]\r\n                        }, {\r\n                            value: 30,\r\n                            symbolSize: [0, 0]\r\n                        }]\r\n                    }]\r\n                });\r\n            }\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .el-tabs--border-card>.el-tabs__content {\r\n        width: 100%;\r\n        height: 100%;\r\n        display: block !important;\r\n    }\r\n    \r\n    .us-wrap {\r\n        height: 160px;\r\n        background: #fbfbfb;\r\n        width: 100%;\r\n        border-bottom: 1px solid #ccc;\r\n        position: relative;\r\n        top: 48px;\r\n    }\r\n    \r\n    .myself-info {\r\n        position: relative;\r\n        top: 18%;\r\n        width: 80px;\r\n        height: 120px;\r\n        margin: 0px auto;\r\n    }\r\n    \r\n    .myself-img {\r\n        width: 80px;\r\n        height: 80px;\r\n        border-radius: 50%;\r\n    }\r\n    \r\n    .myself-name {\r\n        padding-top: 10px;\r\n        text-align: center;\r\n    }\r\n    \r\n    .weui-navbar-my {\r\n        display: -webkit-box;\r\n        display: -webkit-flex;\r\n        display: flex;\r\n        position: relative;\r\n        z-index: 500;\r\n        top: 0;\r\n        width: 100%;\r\n        background-color: #fbfbfb;\r\n    }\r\n    \r\n    #week-consume {\r\n        margin-top: 10%;\r\n        /* width: 94%;\r\n        height: 40%; */\r\n         width: 350px;\r\n        height: 300px;\r\n        padding: 0px 10px;\r\n    }\r\n    \r\n  \r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -2040,7 +1869,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.history-order {\n    background: #fbfbfb;\n}\n.order-stat-used {\n    position: absolute;\n    right: 2%;\n    font-size: 14px;\n    color: #666;\n}\n.order-stat-cancel {\n    position: absolute;\n    right: 4%;\n    font-size: 14px;\n    color: #1aad19;\n}\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/order/src/order/index.vue"],"names":[],"mappings":";AAwIA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,gBAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,gBAAA;IACA,eAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"container-header\">\r\n                <p class=\"order-header-title\">订单</p>\r\n            </div>\r\n            <div class=\"page navbar js_show\">\r\n                <div class=\"weui-tab__panel\">\r\n                    <div class=\"weui-navbar\">\r\n                        <div class=\"weui-navbar__item \" @click=\"notUsedOrder\">\r\n                            未使用订单\r\n                            <span class=\"navbar-active\" v-show=\"dispalyBefore\"></span>\r\n                        </div>\r\n                        <div class=\"weui-navbar__item\" @click=\"historyOrder\">\r\n                            历史订单\r\n                            <span class=\"navbar-active\" v-show=\"dispalyHistory\"></span>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"weui-tab__panel\">\r\n                        <div v-show=\"dispalyBefore\">\r\n                            <div class=\"weui-media-box weui-media-box_appmsg\" v-for=\"(item,index) in notUseOrderList\" :key=\"item.id\">\r\n                                <div class=\"weui-media-box__hd\">\r\n                                    <img class=\"weui-media-box__thumb\" src=\"../../dist/image/about.png\" alt=\"\">\r\n                                </div>\r\n                                <div class=\"weui-media-box__bd\">\r\n                                    <span class=\"order-stat-cancel\" @click=\"cancleOrder(index,item)\">退订</span>\r\n                                    <h4 class=\"weui-media-box__title\">{{item.time}}</h4>\r\n                                    <p class=\"weui-media-box__desc\">{{item.content}}</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div v-show=\"dispalyHistory\">\r\n                            <div class=\"weui-media-box weui-media-box_appmsg history-order\" v-for=\"item in historyOrderList\" :key=\"item.id\">\r\n                                <div class=\"weui-media-box__hd\">\r\n                                    <img class=\"weui-media-box__thumb\" src=\"../../dist/image/dog.png\" alt=\"\">\r\n                                </div>\r\n                                <div class=\"weui-media-box__bd\">\r\n                                    <span class=\"order-stat-used\">已使用</span>\r\n                                    <h4 class=\"weui-media-box__title\">{{item.time}}</h4>\r\n                                    <p class=\"weui-media-box__desc\">{{item.content}}</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div id=\"dialog1\" v-show=\"CancleDialog\">\r\n                <div class=\"weui-mask\"></div>\r\n                <div class=\"weui-dialog\">\r\n                    <div class=\"weui-dialog__hd\"><strong class=\"weui-dialog__title\">订单</strong></div>\r\n                    <div class=\"weui-dialog__bd\">取消 {{order.time}} {{order.content}} 的预定</div>\r\n                    <div class=\"weui-dialog__ft\">\r\n                        <a href=\"javascript:;\" class=\"weui-dialog__btn weui-dialog__btn_default\" @click=\"CancleDialog=false\">取消</a>\r\n                        <a href=\"javascript:;\" class=\"weui-dialog__btn weui-dialog__btn_primary\" @click=\"confirmCancleOrder()\">确定</a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <Tabbar value=\"order\"></Tabbar>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    import tabbar from \"../public/tabbar\";\r\n    export default {\r\n        components: {\r\n            Tabbar: tabbar\r\n        },\r\n        data() {\r\n            return {\r\n                order: {\r\n                    time: '',\r\n                    content: ''\r\n                },\r\n                cancelOrderIndex: 0,\r\n                CancleDialog: false,\r\n                dispalyBefore: true,\r\n                dispalyHistory: false,\r\n                notUseOrderList: [{\r\n                        id: 0,\r\n                        time: \"2017/12/15 17:00-19:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 1,\r\n                        time: \"2017/12/17 15:00-17:00\",\r\n                        content: \"羽毛球11号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 2,\r\n                        time: \"2017/12/15 15:00-17:00\",\r\n                        content: \"羽毛球9号场地\"\r\n                    }\r\n                ],\r\n                historyOrderList: [{\r\n                        id: 0,\r\n                        time: \"2014/12/15 15:00-17:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        time: \"2014/12/15 15:00-17:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        time: \"2014/12/15 15:00-17:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    }\r\n                ]\r\n            };\r\n        },\r\n        methods: {\r\n            notUsedOrder() {\r\n                this.dispalyHistory = false;\r\n                this.dispalyBefore = true;\r\n            },\r\n            historyOrder() {\r\n                this.dispalyHistory = true;\r\n                this.dispalyBefore = false;\r\n            },\r\n            cancleOrder(index, item) {\r\n                this.order.time = item.time;\r\n                this.order.content = item.content\r\n                this.CancleDialog = true;\r\n                this.cancelOrderIndex = index;\r\n            },\r\n            confirmCancleOrder() {\r\n                this.notUseOrderList.splice(this.cancelOrderIndex, 1);\r\n                this.CancleDialog = false;\r\n            }\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .history-order {\r\n        background: #fbfbfb;\r\n    }\r\n    \r\n    .order-stat-used {\r\n        position: absolute;\r\n        right: 2%;\r\n        font-size: 14px;\r\n        color: #666;\r\n    }\r\n    \r\n    .order-stat-cancel {\r\n        position: absolute;\r\n        right: 4%;\r\n        font-size: 14px;\r\n        color: #1aad19;\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.history-order {\n    background: #fbfbfb;\n}\n.order-stat-used {\n    position: absolute;\n    right: 2%;\n    font-size: 14px;\n    color: #666;\n}\n.order-stat-cancel {\n    position: absolute;\n    right: 4%;\n    font-size: 14px;\n    color: #1aad19;\n}\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/order/src/order/index.vue"],"names":[],"mappings":";AAwIA;IACA,oBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,gBAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,gBAAA;IACA,eAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"weui-tab__panel\">\r\n            <div class=\"container-header\">\r\n                <p class=\"order-header-title\">订单</p>\r\n            </div>\r\n            <div class=\"page navbar js_show\">\r\n                <div class=\"weui-tab__panel\">\r\n                    <div class=\"weui-navbar\">\r\n                        <div class=\"weui-navbar__item \" @click=\"notUsedOrder\">\r\n                            未支付订单\r\n                            <span class=\"navbar-active\" v-show=\"dispalyBefore\"></span>\r\n                        </div>\r\n                        <div class=\"weui-navbar__item\" @click=\"historyOrder\">\r\n                            历史订单\r\n                            <span class=\"navbar-active\" v-show=\"dispalyHistory\"></span>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"weui-tab__panel\">\r\n                        <div v-show=\"dispalyBefore\">\r\n                            <div class=\"weui-media-box weui-media-box_appmsg\" v-for=\"(item,index) in notUseOrderList\" :key=\"item.id\">\r\n                                <div class=\"weui-media-box__hd\">\r\n                                    <img class=\"weui-media-box__thumb\" src=\"../../dist/image/about.png\" alt=\"\">\r\n                                </div>\r\n                                <div class=\"weui-media-box__bd\">\r\n                                    <span class=\"order-stat-cancel\" @click=\"cancleOrder(index,item)\">退订</span>\r\n                                    <h4 class=\"weui-media-box__title\">{{item.time}}</h4>\r\n                                    <p class=\"weui-media-box__desc\">{{item.content}}</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div v-show=\"dispalyHistory\">\r\n                            <div class=\"weui-media-box weui-media-box_appmsg history-order\" v-for=\"item in historyOrderList\" :key=\"item.id\">\r\n                                <div class=\"weui-media-box__hd\">\r\n                                    <img class=\"weui-media-box__thumb\" src=\"../../dist/image/dog.png\" alt=\"\">\r\n                                </div>\r\n                                <div class=\"weui-media-box__bd\">\r\n                                    <span class=\"order-stat-used\">已使用</span>\r\n                                    <h4 class=\"weui-media-box__title\">{{item.time}}</h4>\r\n                                    <p class=\"weui-media-box__desc\">{{item.content}}</p>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div id=\"dialog1\" v-show=\"CancleDialog\">\r\n                <div class=\"weui-mask\"></div>\r\n                <div class=\"weui-dialog\">\r\n                    <div class=\"weui-dialog__hd\"><strong class=\"weui-dialog__title\">订单</strong></div>\r\n                    <div class=\"weui-dialog__bd\">取消 {{order.time}} {{order.content}} 的预定</div>\r\n                    <div class=\"weui-dialog__ft\">\r\n                        <a href=\"javascript:;\" class=\"weui-dialog__btn weui-dialog__btn_default\" @click=\"CancleDialog=false\">取消</a>\r\n                        <a href=\"javascript:;\" class=\"weui-dialog__btn weui-dialog__btn_primary\" @click=\"confirmCancleOrder()\">确定</a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <Tabbar value=\"order\"></Tabbar>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n    import tabbar from \"../public/tabbar\";\r\n    export default {\r\n        components: {\r\n            Tabbar: tabbar\r\n        },\r\n        data() {\r\n            return {\r\n                order: {\r\n                    time: '',\r\n                    content: ''\r\n                },\r\n                cancelOrderIndex: 0,\r\n                CancleDialog: false,\r\n                dispalyBefore: true,\r\n                dispalyHistory: false,\r\n                notUseOrderList: [{\r\n                        id: 0,\r\n                        time: \"2017/12/15 17:00-19:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 1,\r\n                        time: \"2017/12/17 15:00-17:00\",\r\n                        content: \"羽毛球11号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 2,\r\n                        time: \"2017/12/15 15:00-17:00\",\r\n                        content: \"羽毛球9号场地\"\r\n                    }\r\n                ],\r\n                historyOrderList: [{\r\n                        id: 0,\r\n                        time: \"2014/12/15 15:00-17:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        time: \"2014/12/15 15:00-17:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    },\r\n                    {\r\n                        id: 0,\r\n                        time: \"2014/12/15 15:00-17:00\",\r\n                        content: \"羽毛球3号，6号场地\"\r\n                    }\r\n                ]\r\n            };\r\n        },\r\n        methods: {\r\n            notUsedOrder() {\r\n                this.dispalyHistory = false;\r\n                this.dispalyBefore = true;\r\n            },\r\n            historyOrder() {\r\n                this.dispalyHistory = true;\r\n                this.dispalyBefore = false;\r\n            },\r\n            cancleOrder(index, item) {\r\n                this.order.time = item.time;\r\n                this.order.content = item.content\r\n                this.CancleDialog = true;\r\n                this.cancelOrderIndex = index;\r\n            },\r\n            confirmCancleOrder() {\r\n                this.notUseOrderList.splice(this.cancelOrderIndex, 1);\r\n                this.CancleDialog = false;\r\n            }\r\n        }\r\n    };\r\n</script>\r\n\r\n<style>\r\n    .history-order {\r\n        background: #fbfbfb;\r\n    }\r\n    \r\n    .order-stat-used {\r\n        position: absolute;\r\n        right: 2%;\r\n        font-size: 14px;\r\n        color: #666;\r\n    }\r\n    \r\n    .order-stat-cancel {\r\n        position: absolute;\r\n        right: 4%;\r\n        font-size: 14px;\r\n        color: #1aad19;\r\n    }\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -2054,7 +1883,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.time-info {\r\n  margin-top: 60px;\r\n  font-size: 14px;\r\n  padding: 20px 10px 20px 50px;\r\n  color: #888;\n}\n.icon-time-info {\r\n  padding-right: 10px;\n}\n.time-select-container {\r\n  width: 100%;\r\n  height: 74%;\n}\n.time-select-every {\r\n  padding: 10px 56px;\r\n  height: 80px;\n}\n.select-date-input {\r\n  margin-top: 10px;\r\n  width: 100%;\r\n  height: 40px;\r\n  outline: none;\r\n  border: 1px solid #ccc;\r\n  font-size: 15px;\r\n  padding-left: 10px;\r\n  border-radius: 5px;\n}\n.active-time {\r\n  color: #259b24;\n}\n.select-place-btn {\r\n  bottom: 7px;\r\n  width: 96%;\r\n  font-size: 16px;\r\n  background: #259b24;\n}\r\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/public/src/public/select_time.vue"],"names":[],"mappings":";AA6KA;EACA,iBAAA;EACA,gBAAA;EACA,6BAAA;EACA,YAAA;CACA;AAEA;EACA,oBAAA;CACA;AAEA;EACA,YAAA;EACA,YAAA;CACA;AAEA;EACA,mBAAA;EACA,aAAA;CACA;AAEA;EACA,iBAAA;EACA,YAAA;EACA,aAAA;EACA,cAAA;EACA,uBAAA;EACA,gBAAA;EACA,mBAAA;EACA,mBAAA;CACA;AAEA;EACA,eAAA;CACA;AAEA;EACA,YAAA;EACA,WAAA;EACA,gBAAA;EACA,oBAAA;CACA","file":"select_time.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"container-header\">\r\n            <i class=\"iconfont icon-jiantou-copy-copy-copy head-back\" @click=\"back()\"></i>\r\n            <p class=\"header-title\">选择时间k</p>\r\n        </div>\r\n        <p class=\"time-info\"><i class=\"iconfont icon-info icon-time-info\"></i>请选择开始时间和结束时间，至少一小时</p>\r\n        <div class=\"time-select-container\">\r\n            <div class=\"time-select-every\">\r\n                <p>选择日期</p>\r\n                <input type=\"text\" placeholder=\"请选择日期\" class=\"select-date-input\" @click=\"getDate\" v-model=\"currentDate\">\r\n            </div>\r\n            <div class=\"time-select-every\">\r\n                <p>选择开始时间</p>\r\n                <input type=\"text\" placeholder=\"请选择日期\" class=\"select-date-input\" @click=\"getStartTime\" v-model=\"startTime\">\r\n            </div>\r\n            <div class=\"time-select-every\">\r\n                <p>选择结束时间</p>\r\n                <input type=\"text\" placeholder=\"请选择日期\" class=\"select-date-input\" v-model=\"endTime\"  @click=\"getEndTime\">\r\n            </div>\r\n            <div class=\"time-select-every\">\r\n                <p class=\"active-time\">{{this.checkTime}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"weui-btn weui-btn_primary select-place-btn\" @click=\"selectPlace\">去选场地</div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  data() {\r\n    return {\r\n      checkTime: \"\", // 当前选中的时间\r\n      currentDate: \"\",\r\n      startTime: \"14:00\",\r\n      endTime: \"15:00\",\r\n      year: \"\",\r\n      mounth: \"\",\r\n      day: \"\",\r\n      dateArr: [\r\n        {\r\n          label: \"14:00\",\r\n          value: 0\r\n        },\r\n        {\r\n          label: \"14:30\",\r\n          value: 1\r\n        },\r\n        {\r\n          label: \"15:00\",\r\n          value: 3\r\n        },\r\n        {\r\n          label: \"15:30\",\r\n          value: 4\r\n        },\r\n        {\r\n          label: \"16:00\",\r\n          value: 5\r\n        },\r\n        {\r\n          label: \"16:30\",\r\n          value: 6\r\n        },\r\n        {\r\n          label: \"17:00\",\r\n          value: 7\r\n        },\r\n        {\r\n          label: \"17:30\",\r\n          value: 8\r\n        },\r\n        {\r\n          label: \"18:00\",\r\n          value: 9\r\n        },\r\n        {\r\n          label: \"18:30\",\r\n          value: 10\r\n        },\r\n        {\r\n          label: \"19:00\",\r\n          value: 11\r\n        },\r\n        {\r\n          label: \"19:30\",\r\n          value: 12\r\n        },\r\n        {\r\n          label: \"20:00\",\r\n          value: 13\r\n        },\r\n        {\r\n          label: \"20:30\",\r\n          value: 14\r\n        },\r\n        {\r\n          label: \"21:00\",\r\n          value: 15\r\n        },\r\n        {\r\n          label: \"21:30\",\r\n          value: 16\r\n        }\r\n      ]\r\n    };\r\n  },\r\n  mounted() {\r\n    console.log(this.$route.params)\r\n    let myDate = new Date();\r\n    this.year = myDate.getFullYear();\r\n    this.mounth = myDate.getMonth() + 1;\r\n    this.day = myDate.getDate();\r\n    this.currentDate = this.year + \"/\" + this.mounth + \"/\" + this.day;\r\n    this.checkTime =\r\n      this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n  },\r\n  methods: {\r\n    getDate() {\r\n      weui.datePicker({\r\n        start: new Date(), // 从今天开始\r\n        end: 2030,\r\n        defaultValue: [this.year, this.mounth, this.day],\r\n        onConfirm: result => {\r\n          this.currentDate =\r\n            result[0].value + \"/\" + result[1].value + \"/\" + result[2].value;\r\n          this.checkTime =\r\n            this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n        },\r\n        id: \"datePicker\"\r\n      });\r\n    },\r\n    getStartTime() {\r\n      weui.picker(this.dateArr, {\r\n        className: \"custom-classname\",\r\n        container: \"body\",\r\n        defaultValue: [0],\r\n        onConfirm: result => {\r\n          this.startTime = result[0].label;\r\n          this.checkTime =\r\n            this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n        },\r\n        id: \"singleLinePicker\"\r\n      });\r\n    },\r\n    getEndTime() {\r\n      weui.picker(this.dateArr, {\r\n        className: \"custom-classname\",\r\n        container: \"body\",\r\n        defaultValue: [0],\r\n        onConfirm: result => {\r\n          this.endTime = result[0].label;\r\n          this.checkTime =\r\n            this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n        },\r\n        id: \"singleLinePicker\"\r\n      });\r\n    },\r\n    back() {\r\n      this.$router.back();\r\n    },\r\n    selectPlace(){\r\n      if(this.$route.params.stat === \"0\") {\r\n        this.$router.push(\"/soccer\")\r\n      }else{\r\n         this.$router.push(\"/gymnastics\")\r\n      }\r\n    }\r\n  }\r\n};\r\n</script>\r\n\r\n<style>\r\n.time-info {\r\n  margin-top: 60px;\r\n  font-size: 14px;\r\n  padding: 20px 10px 20px 50px;\r\n  color: #888;\r\n}\r\n\r\n.icon-time-info {\r\n  padding-right: 10px;\r\n}\r\n\r\n.time-select-container {\r\n  width: 100%;\r\n  height: 74%;\r\n}\r\n\r\n.time-select-every {\r\n  padding: 10px 56px;\r\n  height: 80px;\r\n}\r\n\r\n.select-date-input {\r\n  margin-top: 10px;\r\n  width: 100%;\r\n  height: 40px;\r\n  outline: none;\r\n  border: 1px solid #ccc;\r\n  font-size: 15px;\r\n  padding-left: 10px;\r\n  border-radius: 5px;\r\n}\r\n\r\n.active-time {\r\n  color: #259b24;\r\n}\r\n\r\n.select-place-btn {\r\n  bottom: 7px;\r\n  width: 96%;\r\n  font-size: 16px;\r\n  background: #259b24;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.time-info {\r\n  margin-top: 60px;\r\n  font-size: 14px;\r\n  padding: 20px 10px 20px 50px;\r\n  color: #888;\n}\n.icon-time-info {\r\n  padding-right: 10px;\n}\n.time-select-container {\r\n  width: 100%;\r\n  height: 74%;\n}\n.time-select-every {\r\n  padding: 10px 56px;\r\n  height: 80px;\n}\n.select-date-input {\r\n  margin-top: 10px;\r\n  width: 100%;\r\n  height: 40px;\r\n  outline: none;\r\n  border: 1px solid #ccc;\r\n  font-size: 15px;\r\n  padding-left: 10px;\r\n  border-radius: 5px;\n}\n.active-time {\r\n  color: #259b24;\n}\n.select-place-btn {\r\n  bottom: 7px;\r\n  width: 96%;\r\n  font-size: 16px;\r\n  background: #259b24;\n}\r\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/public/src/public/select_time.vue"],"names":[],"mappings":";AAyKA;EACA,iBAAA;EACA,gBAAA;EACA,6BAAA;EACA,YAAA;CACA;AAEA;EACA,oBAAA;CACA;AAEA;EACA,YAAA;EACA,YAAA;CACA;AAEA;EACA,mBAAA;EACA,aAAA;CACA;AAEA;EACA,iBAAA;EACA,YAAA;EACA,aAAA;EACA,cAAA;EACA,uBAAA;EACA,gBAAA;EACA,mBAAA;EACA,mBAAA;CACA;AAEA;EACA,eAAA;CACA;AAEA;EACA,YAAA;EACA,WAAA;EACA,gBAAA;EACA,oBAAA;CACA","file":"select_time.vue","sourcesContent":["<template>\r\n    <div class=\"weui-tab\">\r\n        <div class=\"container-header\">\r\n            <i class=\"iconfont icon-jiantou-copy-copy-copy head-back\" @click=\"back()\"></i>\r\n            <p class=\"header-title\">选择时间</p>\r\n        </div>\r\n        <p class=\"time-info\"><i class=\"iconfont icon-info icon-time-info\"></i>请选择开始时间和结束时间，至少一小时</p>\r\n        <div class=\"time-select-container\">\r\n            <div class=\"time-select-every\">\r\n                <p>选择日期</p>\r\n                <input type=\"text\" placeholder=\"请选择日期\" class=\"select-date-input\" @click=\"getDate\" v-model=\"currentDate\">\r\n            </div>\r\n            <div class=\"time-select-every\">\r\n                <p>选择开始时间</p>\r\n                <input type=\"text\" placeholder=\"请选择日期\" class=\"select-date-input\" @click=\"getStartTime\" v-model=\"startTime\">\r\n            </div>\r\n            <div class=\"time-select-every\">\r\n                <p>选择结束时间</p>\r\n                <input type=\"text\" placeholder=\"请选择日期\" class=\"select-date-input\" v-model=\"endTime\"  @click=\"getEndTime\">\r\n            </div>\r\n            <div class=\"time-select-every\">\r\n                <p class=\"active-time\">{{this.checkTime}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"weui-btn weui-btn_primary select-place-btn\" @click=\"selectPlace\">去选场地</div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  data() {\r\n    return {\r\n      checkTime: \"\", // 当前选中的时间\r\n      currentDate: \"\",\r\n      startTime: \"14:00\",\r\n      endTime: \"15:00\",\r\n      year: \"\",\r\n      mounth: \"\",\r\n      day: \"\",\r\n      dateArr: [\r\n        {\r\n          label: \"14:00\",\r\n          value: 0\r\n        },\r\n        {\r\n          label: \"14:30\",\r\n          value: 1\r\n        },\r\n        {\r\n          label: \"15:00\",\r\n          value: 3\r\n        },\r\n        {\r\n          label: \"15:30\",\r\n          value: 4\r\n        },\r\n        {\r\n          label: \"16:00\",\r\n          value: 5\r\n        },\r\n        {\r\n          label: \"16:30\",\r\n          value: 6\r\n        },\r\n        {\r\n          label: \"17:00\",\r\n          value: 7\r\n        },\r\n        {\r\n          label: \"17:30\",\r\n          value: 8\r\n        },\r\n        {\r\n          label: \"18:00\",\r\n          value: 9\r\n        },\r\n        {\r\n          label: \"18:30\",\r\n          value: 10\r\n        },\r\n        {\r\n          label: \"19:00\",\r\n          value: 11\r\n        },\r\n        {\r\n          label: \"19:30\",\r\n          value: 12\r\n        },\r\n        {\r\n          label: \"20:00\",\r\n          value: 13\r\n        },\r\n        {\r\n          label: \"20:30\",\r\n          value: 14\r\n        },\r\n        {\r\n          label: \"21:00\",\r\n          value: 15\r\n        },\r\n        {\r\n          label: \"21:30\",\r\n          value: 16\r\n        }\r\n      ]\r\n    };\r\n  },\r\n  mounted() {\r\n    console.log(this.$route.params)\r\n    let myDate = new Date();\r\n    this.year = myDate.getFullYear();\r\n    this.mounth = myDate.getMonth() + 1;\r\n    this.day = myDate.getDate();\r\n    this.currentDate = this.year + \"/\" + this.mounth + \"/\" + this.day;\r\n    this.checkTime =\r\n      this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n  },\r\n  methods: {\r\n    getDate() {\r\n      weui.datePicker({\r\n        start: new Date(), // 从今天开始\r\n        end: 2030,\r\n        defaultValue: [this.year, this.mounth, this.day],\r\n        onConfirm: result => {\r\n          this.currentDate =\r\n            result[0].value + \"/\" + result[1].value + \"/\" + result[2].value;\r\n          this.checkTime =\r\n            this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n        },\r\n        id: \"datePicker\"\r\n      });\r\n    },\r\n    getStartTime() {\r\n      weui.picker(this.dateArr, {\r\n        className: \"custom-classname\",\r\n        container: \"body\",\r\n        defaultValue: [0],\r\n        onConfirm: result => {\r\n          this.startTime = result[0].label;\r\n          this.checkTime =\r\n            this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n        },\r\n        id: \"singleLinePicker\"\r\n      });\r\n    },\r\n    getEndTime() {\r\n      weui.picker(this.dateArr, {\r\n        className: \"custom-classname\",\r\n        container: \"body\",\r\n        defaultValue: [0],\r\n        onConfirm: result => {\r\n          this.endTime = result[0].label;\r\n          this.checkTime =\r\n            this.currentDate + \" \" + this.startTime + \"-\" + this.endTime;\r\n        },\r\n        id: \"singleLinePicker\"\r\n      });\r\n    },\r\n    back() {\r\n      this.$router.back();\r\n    },\r\n    selectPlace(){\r\n        this.$router.push(\"/soccer\")\r\n    }\r\n  }\r\n};\r\n</script>\r\n\r\n<style>\r\n.time-info {\r\n  margin-top: 60px;\r\n  font-size: 14px;\r\n  padding: 20px 10px 20px 50px;\r\n  color: #888;\r\n}\r\n\r\n.icon-time-info {\r\n  padding-right: 10px;\r\n}\r\n\r\n.time-select-container {\r\n  width: 100%;\r\n  height: 74%;\r\n}\r\n\r\n.time-select-every {\r\n  padding: 10px 56px;\r\n  height: 80px;\r\n}\r\n\r\n.select-date-input {\r\n  margin-top: 10px;\r\n  width: 100%;\r\n  height: 40px;\r\n  outline: none;\r\n  border: 1px solid #ccc;\r\n  font-size: 15px;\r\n  padding-left: 10px;\r\n  border-radius: 5px;\r\n}\r\n\r\n.active-time {\r\n  color: #259b24;\r\n}\r\n\r\n.select-place-btn {\r\n  bottom: 7px;\r\n  width: 96%;\r\n  font-size: 16px;\r\n  background: #259b24;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -2068,7 +1897,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.login-warp {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #f8f8f8;\n}\n.login-logo {\r\n  padding: 30px 20px;\n}\n.login-content-icon {\r\n  height: 80px;\r\n  width: 100%;\n}\n.login-title {\r\n  margin: 0px auto;\r\n  display: block;\r\n  width: 118px;\r\n  height: 72px;\n}\n.login-content-user {\r\n  margin-top: 20px;\r\n  padding: 0px 20px;\r\n  height: 100px;\r\n  width: 89%;\n}\n.login-content-user-name {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\r\n  border-bottom: 1px solid #cccccc;\n}\n.login-content-user-passwd {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\n}\n.login-content-user input {\r\n  height: 40px;\r\n  outline: none;\r\n  float: right;\r\n  width: 86%;\r\n  font-size: 16px;\r\n  color: #333;\n}\ninput::-webkit-input-placeholder {\r\n  color: #a9a9a9;\r\n  font-size: 14px;\n}\n.login-input-icon {\r\n  font-size: 20px;\r\n  padding: 0px 10px;\r\n  line-height: 50px;\r\n  color: #bebebe;\n}\n.login-user-btn {\r\n  padding: 10px 40px;\r\n  font-size: 16px;\r\n  background: #259b24;\r\n  color: #ffffff;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n  letter-spacing: 4px;\n}\n.login-footer {\r\n  position: absolute;\r\n  bottom: 30px;\r\n  width: 100%;\n}\r\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/login/src/login/index.vue"],"names":[],"mappings":";AAmCA;EACA,YAAA;EACA,aAAA;EACA,oBAAA;CACA;AAEA;EACA,mBAAA;CACA;AAEA;EACA,aAAA;EACA,YAAA;CACA;AAEA;EACA,iBAAA;EACA,eAAA;EACA,aAAA;EACA,aAAA;CACA;AAEA;EACA,iBAAA;EACA,kBAAA;EACA,cAAA;EACA,WAAA;CACA;AAEA;EACA,YAAA;EACA,oBAAA;EACA,aAAA;EACA,iCAAA;CACA;AAEA;EACA,YAAA;EACA,oBAAA;EACA,aAAA;CACA;AAEA;EACA,aAAA;EACA,cAAA;EACA,aAAA;EACA,WAAA;EACA,gBAAA;EACA,YAAA;CACA;AAEA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;CACA;AAEA;EACA,mBAAA;EACA,gBAAA;EACA,oBAAA;EACA,eAAA;EACA,iBAAA;EACA,mBAAA;EACA,oBAAA;CACA;AACA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"login-warp\">\r\n        <div class=\"login-logo\"><img src=\"../../dist/image/login.png\"></div>\r\n        <div class=\"login-content-icon\">\r\n            <img src=\"../../dist/image/icon.png\" class=\"login-title\">\r\n        </div>\r\n        <div class=\"login-content-user\">\r\n            <div class=\"login-content-user-name\">\r\n                <i class=\"iconfont icon-zhanghao login-input-icon\"></i>\r\n                <input type=\"text\" placeholder=\"学工号\" />\r\n            </div>\r\n            <div class=\"login-content-user-passwd\">\r\n                <i class=\"iconfont icon-mima login-input-icon\"></i>\r\n                <input type=\"password\" placeholder=\"密码\" />\r\n            </div>\r\n            <div class=\"login-user-btn\" @click=\"login()\">登录</div>\r\n        </div>\r\n        <div class=\"weui-footer login-footer\" >\r\n            <p class=\"weui-footer__text\">Copyright &copy; 2017 西北农林科技大学体育部</p>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nimport tabbar from \"../public/tabbar\";\r\nexport default {\r\n    methods:{\r\n        login(){\r\n            this.$router.push('/home')\r\n        }\r\n    }\r\n};\r\n</script>\r\n\r\n<style>\r\n.login-warp {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #f8f8f8;\r\n}\r\n\r\n.login-logo {\r\n  padding: 30px 20px;\r\n}\r\n\r\n.login-content-icon {\r\n  height: 80px;\r\n  width: 100%;\r\n}\r\n\r\n.login-title {\r\n  margin: 0px auto;\r\n  display: block;\r\n  width: 118px;\r\n  height: 72px;\r\n}\r\n\r\n.login-content-user {\r\n  margin-top: 20px;\r\n  padding: 0px 20px;\r\n  height: 100px;\r\n  width: 89%;\r\n}\r\n\r\n.login-content-user-name {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\r\n  border-bottom: 1px solid #cccccc;\r\n}\r\n\r\n.login-content-user-passwd {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\r\n}\r\n\r\n.login-content-user input {\r\n  height: 40px;\r\n  outline: none;\r\n  float: right;\r\n  width: 86%;\r\n  font-size: 16px;\r\n  color: #333;\r\n}\r\n\r\ninput::-webkit-input-placeholder {\r\n  color: #a9a9a9;\r\n  font-size: 14px;\r\n}\r\n\r\n.login-input-icon {\r\n  font-size: 20px;\r\n  padding: 0px 10px;\r\n  line-height: 50px;\r\n  color: #bebebe;\r\n}\r\n\r\n.login-user-btn {\r\n  padding: 10px 40px;\r\n  font-size: 16px;\r\n  background: #259b24;\r\n  color: #ffffff;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n  letter-spacing: 4px;\r\n}\r\n.login-footer {\r\n  position: absolute;\r\n  bottom: 30px;\r\n  width: 100%;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.login-warp {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #f8f8f8;\n}\n.login-logo {\r\n  padding: 30px 20px;\n}\n.login-content-icon {\r\n  height: 80px;\r\n  width: 100%;\n}\n.login-title {\r\n  margin: 0px auto;\r\n  display: block;\r\n  width: 118px;\r\n  height: 72px;\n}\n.login-content-user {\r\n  margin-top: 20px;\r\n  padding: 0px 20px;\r\n  height: 100px;\r\n  width: 89%;\n}\n.login-content-user-name {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\r\n  border-bottom: 1px solid #cccccc;\n}\n.login-content-user-passwd {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\n}\n.login-content-user input {\r\n  height: 40px;\r\n  outline: none;\r\n  float: right;\r\n  width: 86%;\r\n  font-size: 16px;\r\n  color: #333;\r\n  border: 0px;\n}\ninput::-webkit-input-placeholder {\r\n  color: #a9a9a9;\r\n  font-size: 14px;\n}\n.login-input-icon {\r\n  font-size: 20px;\r\n  padding: 0px 10px;\r\n  line-height: 50px;\r\n  color: #bebebe;\n}\n.login-user-btn {\r\n  padding: 10px 40px;\r\n  font-size: 16px;\r\n  background: #259b24;\r\n  color: #ffffff;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n  letter-spacing: 4px;\n}\n.login-footer {\r\n  position: absolute;\r\n  bottom: 30px;\r\n  width: 100%;\n}\r\n", "", {"version":3,"sources":["F:/demo/graduation_project/src/login/src/login/index.vue"],"names":[],"mappings":";AAmCA;EACA,YAAA;EACA,aAAA;EACA,oBAAA;CACA;AAEA;EACA,mBAAA;CACA;AAEA;EACA,aAAA;EACA,YAAA;CACA;AAEA;EACA,iBAAA;EACA,eAAA;EACA,aAAA;EACA,aAAA;CACA;AAEA;EACA,iBAAA;EACA,kBAAA;EACA,cAAA;EACA,WAAA;CACA;AAEA;EACA,YAAA;EACA,oBAAA;EACA,aAAA;EACA,iCAAA;CACA;AAEA;EACA,YAAA;EACA,oBAAA;EACA,aAAA;CACA;AAEA;EACA,aAAA;EACA,cAAA;EACA,aAAA;EACA,WAAA;EACA,gBAAA;EACA,YAAA;EACA,YAAA;CACA;AAEA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;CACA;AAEA;EACA,mBAAA;EACA,gBAAA;EACA,oBAAA;EACA,eAAA;EACA,iBAAA;EACA,mBAAA;EACA,oBAAA;CACA;AACA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;CACA","file":"index.vue","sourcesContent":["<template>\r\n    <div class=\"login-warp\">\r\n        <div class=\"login-logo\"><img src=\"../../dist/image/login.png\"></div>\r\n        <div class=\"login-content-icon\">\r\n            <img src=\"../../dist/image/icon.png\" class=\"login-title\">\r\n        </div>\r\n        <div class=\"login-content-user\">\r\n            <div class=\"login-content-user-name\">\r\n                <i class=\"iconfont icon-zhanghao login-input-icon\"></i>\r\n                <input type=\"text\" placeholder=\"学工号\" />\r\n            </div>\r\n            <div class=\"login-content-user-passwd\">\r\n                <i class=\"iconfont icon-mima login-input-icon\"></i>\r\n                <input type=\"password\" placeholder=\"密码\" />\r\n            </div>\r\n            <div class=\"login-user-btn\" @click=\"login()\">登录</div>\r\n        </div>\r\n        <div class=\"weui-footer login-footer\" >\r\n            <p class=\"weui-footer__text\">Copyright &copy; 2017 西北农林科技大学体育部</p>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nimport tabbar from \"../public/tabbar\";\r\nexport default {\r\n    methods:{\r\n        login(){\r\n            this.$router.push('/home')\r\n        }\r\n    }\r\n};\r\n</script>\r\n\r\n<style>\r\n.login-warp {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: #f8f8f8;\r\n}\r\n\r\n.login-logo {\r\n  padding: 30px 20px;\r\n}\r\n\r\n.login-content-icon {\r\n  height: 80px;\r\n  width: 100%;\r\n}\r\n\r\n.login-title {\r\n  margin: 0px auto;\r\n  display: block;\r\n  width: 118px;\r\n  height: 72px;\r\n}\r\n\r\n.login-content-user {\r\n  margin-top: 20px;\r\n  padding: 0px 20px;\r\n  height: 100px;\r\n  width: 89%;\r\n}\r\n\r\n.login-content-user-name {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\r\n  border-bottom: 1px solid #cccccc;\r\n}\r\n\r\n.login-content-user-passwd {\r\n  width: 100%;\r\n  background: #ffffff;\r\n  height: 48px;\r\n}\r\n\r\n.login-content-user input {\r\n  height: 40px;\r\n  outline: none;\r\n  float: right;\r\n  width: 86%;\r\n  font-size: 16px;\r\n  color: #333;\r\n  border: 0px;\r\n}\r\n\r\ninput::-webkit-input-placeholder {\r\n  color: #a9a9a9;\r\n  font-size: 14px;\r\n}\r\n\r\n.login-input-icon {\r\n  font-size: 20px;\r\n  padding: 0px 10px;\r\n  line-height: 50px;\r\n  color: #bebebe;\r\n}\r\n\r\n.login-user-btn {\r\n  padding: 10px 40px;\r\n  font-size: 16px;\r\n  background: #259b24;\r\n  color: #ffffff;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n  letter-spacing: 4px;\r\n}\r\n.login-footer {\r\n  position: absolute;\r\n  bottom: 30px;\r\n  width: 100%;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -2095,28 +1924,64 @@ module.exports = __webpack_require__.p + "build/img/dog.png?9f3b8f1fab0203853582
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "build/img/icon.png?5b6101d86e70d6e3f53113727c2ac668";
+module.exports = __webpack_require__.p + "build/img/home_bg1.jpg?e4ba6575670cb7fda945326a02aa1c66";
 
 /***/ }),
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "build/img/login.png?2a279aef4f5f4f19a89ec6683a6858c5";
+module.exports = __webpack_require__.p + "build/img/home_bg2.jpg?f81fd3d5a57642195b3420cce0159c42";
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "build/img/soccer.png?fa9a12b5747a57698d66962c8df3f8e0";
+module.exports = __webpack_require__.p + "build/img/home_bg3.jpg?0e3a21dcff25e35e5a0e533a54848f64";
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "build/img/about.png?b8063914da43539118fd9b1a2b4291b2";
+module.exports = __webpack_require__.p + "build/img/home_bg4.jpg?ed8fe9849015ed725ba642c97693a2b4";
 
 /***/ }),
 /* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "build/img/home_bg5.jpg?d6ad467dbc97221a7e0b284619274d6e";
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "build/img/home_bg6.jpg?2ebc04c1fad3aa9a9bca8c6154c97949";
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "build/img/icon.png?5b6101d86e70d6e3f53113727c2ac668";
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "build/img/login.png?2a279aef4f5f4f19a89ec6683a6858c5";
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "build/img/soccer.png?fa9a12b5747a57698d66962c8df3f8e0";
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "build/img/about.png?b8063914da43539118fd9b1a2b4291b2";
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -2172,7 +2037,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(38);
+var	fixUrls = __webpack_require__(44);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -2488,7 +2353,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 38 */
+/* 44 */
 /***/ (function(module, exports) {
 
 
@@ -2583,7 +2448,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 39 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2591,12 +2456,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_1e674ab4_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_1e674ab4_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(56);
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(60)
-}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 
@@ -2606,7 +2467,7 @@ var normalizeComponent = __webpack_require__(0)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -2641,7 +2502,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 40 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2649,11 +2510,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0e5d9b1b_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0e5d9b1b_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(54);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(58)
+  __webpack_require__(64)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -2699,7 +2560,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 41 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2707,11 +2568,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_d631dfee_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_d631dfee_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(62);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(64)
+  __webpack_require__(70)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -2757,7 +2618,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 42 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2765,11 +2626,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_9d5464a4_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_9d5464a4_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(59);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(62)
+  __webpack_require__(68)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -2815,7 +2676,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 43 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2823,11 +2684,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_select_time_vue__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_select_time_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_select_time_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_select_time_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_select_time_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_bee1f67a_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_select_time_vue__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_bee1f67a_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_select_time_vue__ = __webpack_require__(61);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(63)
+  __webpack_require__(69)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -2873,7 +2734,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 44 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2881,11 +2742,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0b31dfa5_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0b31dfa5_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(53);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(57)
+  __webpack_require__(63)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -2931,7 +2792,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 45 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2939,7 +2800,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_pay_success_vue__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_pay_success_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_pay_success_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_pay_success_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_pay_success_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_7b6b30ff_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_pay_success_vue__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_7b6b30ff_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_pay_success_vue__ = __webpack_require__(58);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -2985,7 +2846,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 46 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2993,11 +2854,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__) if(["default","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_index_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_50bc54cc_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_50bc54cc_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(57);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(61)
+  __webpack_require__(67)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -3043,7 +2904,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 47 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3253,21 +3114,21 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "weui-flex" }, [
       _c("div", { staticClass: "weui-flex__item" }, [
-        _c("div", { staticClass: "placeholder" }, [
+        _c("div", { staticClass: "soccer-placeholder" }, [
           _c("div", { staticClass: "placeholder-select" }),
           _c("span", { staticClass: "select-title" }, [_vm._v("可选")])
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "weui-flex__item" }, [
-        _c("div", { staticClass: "placeholder" }, [
+        _c("div", { staticClass: "soccer-placeholder" }, [
           _c("div", { staticClass: "placeholder-disable" }),
           _c("span", { staticClass: "select-title" }, [_vm._v("不可选")])
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "weui-flex__item" }, [
-        _c("div", { staticClass: "placeholder" }, [
+        _c("div", { staticClass: "soccer-placeholder" }, [
           _c("div", { staticClass: "placeholder-current" }),
           _c("span", { staticClass: "select-title" }, [_vm._v("已选")])
         ])
@@ -3317,7 +3178,7 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3341,7 +3202,7 @@ var render = function() {
                 return _c("el-carousel-item", { key: item }, [
                   _c("img", {
                     staticClass: "home-top-img",
-                    attrs: { src: item }
+                    attrs: { src: item.url }
                   })
                 ])
               })
@@ -3351,37 +3212,33 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("div", { staticClass: "weui-flex" }, [
-          _c("div", { staticClass: "weui-flex__item" }, [
-            _c(
-              "div",
-              { staticClass: "placeholder" },
-              [
-                _c("router-link", { attrs: { to: "/time/0" } }, [
-                  _c("img", {
-                    attrs: { src: __webpack_require__(35) }
-                  }),
-                  _c("span", [_vm._v("羽毛球x预订")])
-                ])
-              ],
-              1
-            )
-          ]),
+          _c(
+            "div",
+            { staticClass: "weui-flex__item" },
+            [
+              _c("router-link", { attrs: { to: "/time" } }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__(41) }
+                }),
+                _c("span", [_vm._v("羽毛球预订")])
+              ])
+            ],
+            1
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "weui-flex__item" }, [
-            _c(
-              "div",
-              { staticClass: "placeholder" },
-              [
-                _c("router-link", { attrs: { to: "/time/1" } }, [
-                  _c("img", {
-                    attrs: { src: __webpack_require__(31) }
-                  }),
-                  _c("span", [_vm._v("体操室预订")])
-                ])
-              ],
-              1
-            )
-          ])
+          _c(
+            "div",
+            { staticClass: "weui-flex__item" },
+            [
+              _c("router-link", { attrs: { to: "/gymnastics" } }, [
+                _c("img", {
+                  attrs: { src: __webpack_require__(31) }
+                }),
+                _c("span", [_vm._v("体操室查询")])
+              ])
+            ],
+            1
+          )
         ]),
         _vm._v(" "),
         _vm._m(0)
@@ -3495,6 +3352,38 @@ var staticRenderFns = [
               ])
             ])
           ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "weui-media-box weui-media-box_appmsg",
+            attrs: { href: "javascript:void(0);" }
+          },
+          [
+            _c("div", { staticClass: "weui-media-box__hd" }, [
+              _c("img", {
+                staticClass: "weui-media-box__thumb",
+                attrs: {
+                  src:
+                    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==",
+                  alt: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "weui-media-box__bd" }, [
+              _c("h4", { staticClass: "weui-media-box__title" }, [
+                _vm._v("标题四")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "weui-media-box__desc" }, [
+                _vm._v(
+                  "由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。"
+                )
+              ])
+            ])
+          ]
         )
       ])
     ])
@@ -3511,7 +3400,7 @@ if (false) {
 }
 
 /***/ }),
-/* 49 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3607,7 +3496,7 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3628,248 +3517,11 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("p", { staticClass: "header-title" }, [_vm._v("体操室")])
-      ]),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "soccer-place" },
-        _vm._l(_vm.places, function(item, index) {
-          return item.stat === "kexue"
-            ? _c("div", { key: item.num, staticClass: "scoccer-place-item" }, [
-                _c("div", {
-                  staticClass: "soccer-place-select",
-                  on: {
-                    click: function($event) {
-                      _vm.selectPlace(index)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(item.num))])
-              ])
-            : item.stat === "disable"
-              ? _c("div", { staticClass: "scoccer-place-item" }, [
-                  _c("div", { staticClass: "soccer-place-disable" }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(item.num))])
-                ])
-              : _c("div", { staticClass: "scoccer-place-item" }, [
-                  _c("div", {
-                    staticClass: "soccer-place-current",
-                    on: {
-                      click: function($event) {
-                        _vm.cancleSelect(index)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(item.num))])
-                ])
-        })
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "place-enter" }),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _vm._m(3),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.displayMoney,
-              expression: "displayMoney"
-            }
-          ],
-          staticClass: "place-total-money"
-        },
-        [
-          _c("p", { staticClass: "place-total-info" }, [_vm._v("已选场地")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "place-total-num" }, [
-            _vm._v(" 羽毛球" + _vm._s(_vm.placeNum) + "场地")
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "weui-btn weui-btn_primary confirm-order",
-              on: { click: _vm.confirmPay }
-            },
-            [_vm._v(_vm._s(_vm.totalMoney) + "确认预定")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.payForPlace,
-              expression: "payForPlace"
-            }
-          ]
-        },
-        [
-          _c("div", {
-            staticClass: "weui-mask",
-            staticStyle: { opacity: "1" },
-            attrs: { id: "iosMask" }
-          }),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "weui-actionsheet weui-actionsheet_toggle",
-              attrs: { id: "iosActionsheet" }
-            },
-            [
-              _vm._m(4),
-              _vm._v(" "),
-              _c("div", { staticClass: "weui-form-preview" }, [
-                _c("div", { staticClass: "weui-form-preview__hd" }, [
-                  _c(
-                    "label",
-                    { staticClass: "weui-form-preview__label weui-font" },
-                    [_vm._v("付款金额")]
-                  ),
-                  _vm._v(" "),
-                  _c("em", { staticClass: "weui-form-preview__value" }, [
-                    _vm._v(_vm._s(_vm.totalMoney))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "weui-form-preview__bd" }, [
-                  _c("div", { staticClass: "weui-form-preview__item" }, [
-                    _c("label", { staticClass: "weui-form-preview__label" }, [
-                      _vm._v("场地信息")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "weui-form-preview__value" }, [
-                      _vm._v("羽毛球" + _vm._s(_vm.placeNum) + "场地")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm._m(5),
-                _vm._v(" "),
-                _c("div", { staticClass: "weui-form-preview__ft" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "weui-btn weui-btn_primary confirm-order",
-                      on: { click: _vm.redirectPay }
-                    },
-                    [_vm._v("立即付款")]
-                  )
-                ])
-              ])
-            ]
-          )
-        ]
-      )
+      ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "current-time-div" }, [
-      _c("p", { staticClass: "current-time" }, [
-        _vm._v("2018/4/16 14:00-15:00")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "place-north" }, [
-      _c("i", { staticClass: "iconfont icon-daohang icon-north" }),
-      _vm._v(" 北")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "place-enter-introduce" }, [
-      _c("i", { staticClass: "iconfont icon-jiantouxiangshang icon-enter" }),
-      _c("span", [_vm._v("入口")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "weui-flex" }, [
-      _c("div", { staticClass: "weui-flex__item" }, [
-        _c("div", { staticClass: "placeholder" }, [
-          _c("div", { staticClass: "placeholder-select" }),
-          _c("span", { staticClass: "select-title" }, [_vm._v("可选")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "weui-flex__item" }, [
-        _c("div", { staticClass: "placeholder" }, [
-          _c("div", { staticClass: "placeholder-disable" }),
-          _c("span", { staticClass: "select-title" }, [_vm._v("不可选")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "weui-flex__item" }, [
-        _c("div", { staticClass: "placeholder" }, [
-          _c("div", { staticClass: "placeholder-current" }),
-          _c("span", { staticClass: "select-title" }, [_vm._v("已选")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "weui-actionsheet__title" }, [
-      _c("p", { staticClass: "weui-actionsheet__title-text" }, [
-        _vm._v("确认付款")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "weui-cells" }, [
-      _c(
-        "a",
-        {
-          staticClass: "weui-cell weui-cell_access",
-          attrs: { href: "javascript:;" }
-        },
-        [
-          _c("div", { staticClass: "weui-cell__bd" }, [
-            _c("p", { staticClass: "weui-font" }, [_vm._v("付款方式")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "weui-cell__ft " }, [_vm._v("一卡通")])
-        ]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -3881,7 +3533,7 @@ if (false) {
 }
 
 /***/ }),
-/* 51 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3987,7 +3639,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "myself-info" }, [
         _c("img", {
           staticClass: "myself-img",
-          attrs: { src: __webpack_require__(36) }
+          attrs: { src: __webpack_require__(42) }
         }),
         _vm._v(" "),
         _c("p", { staticClass: "myself-name" }, [_vm._v("马嫒")])
@@ -4006,7 +3658,7 @@ if (false) {
 }
 
 /***/ }),
-/* 52 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4068,7 +3720,7 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4094,7 +3746,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                        未使用订单\n                        "
+                    "\n                        未支付订单\n                        "
                   ),
                   _c("span", {
                     directives: [
@@ -4348,7 +4000,7 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4370,7 +4022,7 @@ if (false) {
 }
 
 /***/ }),
-/* 55 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4389,7 +4041,7 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("p", { staticClass: "header-title" }, [_vm._v("选择时间k")])
+      _c("p", { staticClass: "header-title" }, [_vm._v("选择时间")])
     ]),
     _vm._v(" "),
     _vm._m(0),
@@ -4515,7 +4167,7 @@ if (false) {
 }
 
 /***/ }),
-/* 56 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4556,7 +4208,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "login-logo" }, [
-      _c("img", { attrs: { src: __webpack_require__(34) } })
+      _c("img", { attrs: { src: __webpack_require__(40) } })
     ])
   },
   function() {
@@ -4566,7 +4218,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "login-content-icon" }, [
       _c("img", {
         staticClass: "login-title",
-        attrs: { src: __webpack_require__(33) }
+        attrs: { src: __webpack_require__(39) }
       })
     ])
   },
@@ -4612,7 +4264,7 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -4638,7 +4290,7 @@ if(false) {
 }
 
 /***/ }),
-/* 58 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -4664,7 +4316,7 @@ if(false) {
 }
 
 /***/ }),
-/* 59 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -4690,33 +4342,8 @@ if(false) {
 }
 
 /***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(25);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("2292436d", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/_css-loader@0.28.11@css-loader/index.js?sourceMap!../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1e674ab4\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../../node_modules/_css-loader@0.28.11@css-loader/index.js?sourceMap!../../node_modules/_vue-loader@13.7.1@vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1e674ab4\",\"scoped\":false,\"hasInlineConfig\":false}!../../node_modules/_vue-loader@13.7.1@vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 61 */
+/* 66 */,
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -4742,7 +4369,7 @@ if(false) {
 }
 
 /***/ }),
-/* 62 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -4768,7 +4395,7 @@ if(false) {
 }
 
 /***/ }),
-/* 63 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -4794,7 +4421,7 @@ if(false) {
 }
 
 /***/ }),
-/* 64 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -4820,7 +4447,7 @@ if(false) {
 }
 
 /***/ }),
-/* 65 */
+/* 71 */
 /***/ (function(module, exports) {
 
 /**
