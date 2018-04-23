@@ -18,7 +18,7 @@ body {
 
 .weui-panel {
     width: 100%;
-    margin-top: 0px !important;
+    /* margin-top: 0px !important; */
 }
 
 .weui-tabbar__item {
@@ -76,7 +76,7 @@ body {
 
 .page {
     position: relative;
-    top: 48px;
+    /* top: 48px; */
     height: 68%;
     background: #ffffff;
 }
